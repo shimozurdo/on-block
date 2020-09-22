@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MENU</name>
+    <events>
+        <event-block sid="2795510723284536">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3312448068798932" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="9747326280753192" type="gr_tit_clouds">
+                    <param id="0" name="Width">WindowWidth+968</param>
+                </action>
+                <action id="-3" name="Set position" sid="5247019730479932" type="gr_tit_clouds">
+                    <param id="0" name="X">-256</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3283882093482406">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7909438272427241" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="9848170462768543" type="gr_tit_clouds">
+                    <param id="0" name="X">gr_tit_clouds.X-30*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8402856141024306">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="202428849540453" type="gr_tit_clouds">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-512</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="430151109294033" type="gr_tit_clouds">
+                    <param id="0" name="X">-256</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9191176422627179">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="3563743030654133" type="Touch" />
+                <condition id="4" name="Is touching object" sid="2005425875242939" type="Touch">
+                    <param id="0" name="Object">GR_startGame</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="1246668750652488" type="Touch">
+                    <param id="0" name="Object">instrucctions</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="547699558019909" type="Touch">
+                    <param id="0" name="Object">gr_credits</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="5550813334027484" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="3820857404241662" type="GR_startGame">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="5905746159253229" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1873479719242817" type="System">
+                    <param id="0" name="Layout">continue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6100055423655209">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="6666060197452547" type="Touch" />
+                <condition id="4" name="Is touching object" sid="1654928344654846" type="Touch">
+                    <param id="0" name="Object">instrucctions</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="6107604796864742" type="Touch">
+                    <param id="0" name="Object">GR_startGame</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="2606997346724299" type="Touch">
+                    <param id="0" name="Object">gr_credits</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="7169827175095719" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="5158958648167269" type="instrucctions">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="3592490301682293" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1715634142972243" type="System">
+                    <param id="0" name="Layout">rules</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7455414754484388">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9610187888722256" type="Touch" />
+                <condition id="4" name="Is touching object" sid="5656654420183622" type="Touch">
+                    <param id="0" name="Object">gr_credits</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="6169268454966983" type="Touch">
+                    <param id="0" name="Object">GR_startGame</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="958055447925312" type="Touch">
+                    <param id="0" name="Object">instrucctions</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2754081748575052" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="2156691212903796" type="gr_credits">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="8106157257007903" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5680830839885437" type="System">
+                    <param id="0" name="Layout">credits</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1995649246588353">
+            <conditions>
+                <condition id="0" name="On click" sid="6676783738816956" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Focus" sid="4880177819261291" type="Browser" />
+            </actions>
+        </event-block>
+        <event-block sid="9220503429634344">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9034565072446001" type="Touch" />
+                <condition id="4" name="Is touching object" sid="7744107728110165" type="Touch">
+                    <param id="0" name="Object">sound</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5021656756729973" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Value">SOUND*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4881420536107845">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4288301828331202" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="5835615364030942" type="Audio">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="3030832801788142" type="sound">
+                    <param id="0" name="Animation">&quot;anim1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="1505664834951254" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2755856103200131">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6783759979453397" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="6844139037132009" type="Audio">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="2036627253050013" type="sound">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="1386331299050784" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1559233979732401">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4529953436302957" type="Touch">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Close" sid="4121582712319529" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

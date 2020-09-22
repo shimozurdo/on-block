@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PORTAL_MANAGEMENT</name>
+    <events>
+        <variable constant="0" name="NEW_OBJECT_X" sid="256129422396791" static="0" type="number">0</variable>
+        <variable constant="0" name="NEW_OBJECT_Y" sid="8949772182512085" static="0" type="number">0</variable>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="6698197360997247" title="PORTAL_MANAGEMENT_OPTION_1">
+            <sub-events>
+                <event-block sid="992298830135347">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="650859783363023" type="BASE_FIGURES">
+                            <param id="0" name="Object">PORTALS_1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8247975944036572" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5177533359573434" type="kill_objects" />
+                        <action id="-3" name="Create object" sid="5363323423089347" type="System">
+                            <param id="0" name="Object to create">kill_objects</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">PORTALS_1.X</param>
+                            <param id="3" name="Y">PORTALS_1.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4698473775431612" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1461607780446494" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5865042863840562" type="anime_portal">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6727212153158356">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="5937064136718864" type="kill_objects">
+                                    <param id="0" name="Object">BASE_FIGURES</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="4154633076710528" type="kill_objects">
+                                    <param id="0" name="Object">PLATFORMS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="7172368021337825" type="BASE_FIGURES" />
+                                <action id="-9" name="Destroy" sid="8801775905310871" type="PLATFORMS" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="3777675606178871">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="3430631960679863" type="kill_objects">
+                                            <param id="0" name="Object">FIG_CIRCLES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="9139225818674759" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="6642293692629515" type="FIG_CIRCLES" />
+                                        <action id="-3" name="Create object" sid="4145996143712965" type="System">
+                                            <param id="0" name="Object to create">FIG_CIRCLES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_2.X</param>
+                                            <param id="3" name="Y">portal_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="9818772443907726" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_2.X</param>
+                                            <param id="3" name="Y">portal_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="9818564097262916" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8964617108039557" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="6737465773460836" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="4706258595270517" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_2.X</param>
+                                            <param id="3" name="Y">portal_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="5527672281156101" type="FIG_CIRCLES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="8918768755214753" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="3541481491911331" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1661137634830936">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="6139550689173998" type="kill_objects">
+                                            <param id="0" name="Object">FIG_CUBES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="3454347126673157" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="2158511720706812" type="FIG_CUBES" />
+                                        <action id="-3" name="Create object" sid="8969537761117582" type="System">
+                                            <param id="0" name="Object to create">FIG_CUBES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_2.X</param>
+                                            <param id="3" name="Y">portal_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="3556471480524805" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_2.X</param>
+                                            <param id="3" name="Y">portal_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7421674990225625" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3842316299375348" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="260798375214098" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="9383752718159784" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_2.X</param>
+                                            <param id="3" name="Y">portal_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="496953634882603" type="FIG_CUBES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="7407683178549252" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="876436285048089" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7234042258154701">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="955197956278459" type="kill_objects">
+                                            <param id="0" name="Object">FIG_STARS</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="1938298047015108" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="6349976581514462" type="FIG_STARS" />
+                                        <action id="-3" name="Create object" sid="4735625691592166" type="System">
+                                            <param id="0" name="Object to create">FIG_STARS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="6894862431835634" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="9945277935475497" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8109892138106799" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8862064165846451" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="6039757415153473" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="8389432663360581" type="FIG_STARS">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="1060695899975025" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="9073329128696942" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="637317354321773">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="5741310109368279" type="kill_objects">
+                                            <param id="0" name="Object">FIG_TRIANGLES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="4166298941507978" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="9851593674032382" type="FIG_TRIANGLES" />
+                                        <action id="-3" name="Create object" sid="1319221588628245" type="System">
+                                            <param id="0" name="Object to create">FIG_TRIANGLES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="3870789838957867" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2709307883998967" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7970965668227158" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="4868894158588522" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="9131784268100972" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="3903169056420861" type="FIG_TRIANGLES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="7294710874362915" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="346020370871739" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5315201178650343">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2450054282151614" type="kill_objects">
+                                            <param id="0" name="Object">OBJ_BOMBS</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="2487693353993342" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="4040750963649055" type="OBJ_BOMBS" />
+                                        <action id="-3" name="Create object" sid="5026162502098197" type="System">
+                                            <param id="0" name="Object to create">OBJ_BOMBS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="8127763426578412" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2952845040035826" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="1879820929193302" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5296268857844274" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="6013074601389711" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="7425349659219571" type="OBJ_BOMBS">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="406211446094771" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="8697866104208892" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4581738109248957">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2938673728610402" type="kill_objects">
+                                            <param id="0" name="Object">OBJ_BOX_INCOGNIT</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="7319947209155839" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="4453749253487387" type="OBJ_BOX_INCOGNIT" />
+                                        <action id="-3" name="Create object" sid="5748815553154682" type="System">
+                                            <param id="0" name="Object to create">OBJ_BOX_INCOGNIT</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="630544398384792" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3085217483070275" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="777899532801132" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="2583742822013093" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="1632966238050114" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="3070337659656312" type="OBJ_BOX_INCOGNIT">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="3597761397297602" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="2895729561667071" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5416030128296591">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="932955812702978" type="kill_objects">
+                                            <param id="0" name="Object">OBJ_BOX_METAL</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="9061073138034977" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="2545893025409312" type="OBJ_BOX_METAL" />
+                                        <action id="-3" name="Create object" sid="1552261381663637" type="System">
+                                            <param id="0" name="Object to create">OBJ_BOX_METAL</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="3896931608954146" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2803431601577916" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3812859174007257" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5851002798045517" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="9296674165696985" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="5677202344256045" type="OBJ_BOX_METAL">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="9567129445156376" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="1205352833425121" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7044524298601221">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2262044214263309" type="kill_objects">
+                                            <param id="0" name="Object">OBJ_BOX_NORMAL</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="773300301133621" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="5158570638696336" type="OBJ_BOX_NORMAL" />
+                                        <action id="-3" name="Create object" sid="3707322048967715" type="System">
+                                            <param id="0" name="Object to create">OBJ_BOX_NORMAL</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="2966556629544542" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7955107285919302" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8020158192578583" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="6635747513563278" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="2771311732449364" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="4288903105998096" type="OBJ_BOX_NORMAL">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="9167192712646803" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="8835596473292742" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2764311349627531">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="5427783489783574" type="kill_objects">
+                                            <param id="0" name="Object">OBJ_FIRE</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="512225487248135" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="5347395858483537" type="OBJ_FIRE" />
+                                        <action id="-3" name="Create object" sid="6385334966860355" type="System">
+                                            <param id="0" name="Object to create">OBJ_FIRE</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="9917780076505897" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="4984874669245952" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="424557434446875" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="7111570936319601" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="442527368732846" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">PORTALS_2.X</param>
+                                            <param id="3" name="Y">PORTALS_2.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="4560114352718293" type="OBJ_FIRE">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="2174044061733325" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="4461810802946249" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7840374636057854">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9438202714166594" type="BASE_FIGURES">
+                            <param id="0" name="Object">PORTALS_2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7375209353332028" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7145542286092421" type="kill_objects" />
+                        <action id="-3" name="Create object" sid="3557400297147291" type="System">
+                            <param id="0" name="Object to create">kill_objects</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">PORTALS_2.X</param>
+                            <param id="3" name="Y">PORTALS_2.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2754008597207664" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8127448814426891" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9514503526362794" type="anime_portal">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5002231788347334">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="5563647660852637" type="kill_objects">
+                                    <param id="0" name="Object">BASE_FIGURES</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="7227606489068641" type="kill_objects">
+                                    <param id="0" name="Object">PLATFORMS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="5660333889742345" type="BASE_FIGURES" />
+                                <action id="-9" name="Destroy" sid="9930657832238467" type="PLATFORMS" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9180243738124887">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="9835052040463341" type="kill_objects">
+                                            <param id="0" name="Object">FIG_CIRCLES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="9251455840533038" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="1984540991590113" type="FIG_CIRCLES" />
+                                        <action id="-3" name="Create object" sid="3077593347600515" type="System">
+                                            <param id="0" name="Object to create">FIG_CIRCLES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="2804912317104402" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1763648983577316" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5131303246815301" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8917657748751457" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="1779862235814851" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="5245900564268023" type="FIG_CIRCLES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="5439489045233905" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="2549047793451958" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7639680566763387">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="9270414621667992" type="kill_objects">
+                                            <param id="0" name="Object">FIG_CUBES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="7271384270190271" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="4458386657041404" type="FIG_CUBES" />
+                                        <action id="-3" name="Create object" sid="3274672196184228" type="System">
+                                            <param id="0" name="Object to create">FIG_CUBES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="1260709828599018" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="4510961176620555" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3381545024105054" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3214740371314469" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="1479454393772619" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="125543774733753" type="FIG_CUBES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="4650044498864483" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="341808846521739" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2542103622836946">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="3285524904843609" type="kill_objects">
+                                            <param id="0" name="Object">FIG_STARS</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="9723940145824247" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="3275232737111178" type="FIG_STARS" />
+                                        <action id="-3" name="Create object" sid="5574132928042868" type="System">
+                                            <param id="0" name="Object to create">FIG_STARS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="8832722754431329" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3230185727493722" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5619071359250772" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8545233698038077" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="7429022188287948" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="7055417036521035" type="FIG_STARS">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="8759793903387822" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="7405664116178666" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9850498346727042">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="7021532189672514" type="kill_objects">
+                                            <param id="0" name="Object">FIG_TRIANGLES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="4330808156792801" type="kill_objects" />
+                                        <action id="-9" name="Destroy" sid="7430683813398107" type="FIG_TRIANGLES" />
+                                        <action id="-3" name="Create object" sid="5173161325176418" type="System">
+                                            <param id="0" name="Object to create">FIG_TRIANGLES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="2166439196942578" type="System">
+                                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2107060779947642" type="BASE_FIGURES">
+                                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="1908230313574036" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="907545683241064" type="System">
+                                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="160351757539368" type="System">
+                                            <param id="0" name="Object to create">PLATFORMS</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">portal_1.X</param>
+                                            <param id="3" name="Y">portal_1.Y</param>
+                                        </action>
+                                        <action behavior="Pin2" id="0" name="Pin to object" sid="4490562451587772" type="FIG_TRIANGLES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="4371721467060493" type="BASE_FIGURES">
+                                            <param id="0" name="Pin to">PLATFORMS</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="5808092784537175" type="PLATFORMS" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4719116042433425">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="5691167229751725" type="kill_objects">
+                            <param id="0" name="Object">OBJ_BOMBS</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3549533510572252" type="kill_objects" />
+                        <action id="-9" name="Destroy" sid="3300152083585604" type="OBJ_BOMBS" />
+                        <action id="-3" name="Create object" sid="4539453383189291" type="System">
+                            <param id="0" name="Object to create">OBJ_BOMBS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9028594845244197" type="System">
+                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7596699004549616" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6334271073000229" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1281884975207771" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1558113722371669" type="System">
+                            <param id="0" name="Object to create">PLATFORMS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action behavior="Pin2" id="0" name="Pin to object" sid="2113355116460033" type="OBJ_BOMBS">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="8436795993310512" type="BASE_FIGURES">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="6166021620573981" type="PLATFORMS" />
+                    </actions>
+                </event-block>
+                <event-block sid="2666489765623358">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="6710684862666608" type="kill_objects">
+                            <param id="0" name="Object">OBJ_BOX_INCOGNIT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3686439556404049" type="kill_objects" />
+                        <action id="-9" name="Destroy" sid="5916892336564623" type="OBJ_BOX_INCOGNIT" />
+                        <action id="-3" name="Create object" sid="3498828686237266" type="System">
+                            <param id="0" name="Object to create">OBJ_BOX_INCOGNIT</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8030136690241077" type="System">
+                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5426250262359245" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3046537198597681" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9075723156765903" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4003591976555675" type="System">
+                            <param id="0" name="Object to create">PLATFORMS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action behavior="Pin2" id="0" name="Pin to object" sid="2320971604478188" type="OBJ_BOX_INCOGNIT">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="7727021235702433" type="BASE_FIGURES">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="6083192021834522" type="PLATFORMS" />
+                    </actions>
+                </event-block>
+                <event-block sid="6634946566600864">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4083395239412289" type="kill_objects">
+                            <param id="0" name="Object">OBJ_BOX_METAL</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3130854577466501" type="kill_objects" />
+                        <action id="-9" name="Destroy" sid="3006732688746758" type="OBJ_BOX_METAL" />
+                        <action id="-3" name="Create object" sid="1331517465869824" type="System">
+                            <param id="0" name="Object to create">OBJ_BOX_METAL</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2608485295144556" type="System">
+                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7858342611473812" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3581847859236429" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9197696653684948" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6579175725836181" type="System">
+                            <param id="0" name="Object to create">PLATFORMS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action behavior="Pin2" id="0" name="Pin to object" sid="6963648452216909" type="OBJ_BOX_METAL">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="2036253109627658" type="BASE_FIGURES">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="2434192610325353" type="PLATFORMS" />
+                    </actions>
+                </event-block>
+                <event-block sid="7786398613868243">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4706130023943626" type="kill_objects">
+                            <param id="0" name="Object">OBJ_BOX_NORMAL</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8888282596577899" type="kill_objects" />
+                        <action id="-9" name="Destroy" sid="9913295979848115" type="OBJ_BOX_NORMAL" />
+                        <action id="-3" name="Create object" sid="558790181569294" type="System">
+                            <param id="0" name="Object to create">OBJ_BOX_NORMAL</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8723395816648606" type="System">
+                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7124367210573336" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1532821040894061" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7366592368516091" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7993023826915988" type="System">
+                            <param id="0" name="Object to create">PLATFORMS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action behavior="Pin2" id="0" name="Pin to object" sid="559815488360922" type="OBJ_BOX_NORMAL">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="6010274501060108" type="BASE_FIGURES">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="4827773245315965" type="PLATFORMS" />
+                    </actions>
+                </event-block>
+                <event-block sid="2698736320681607">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="7088959790467111" type="kill_objects">
+                            <param id="0" name="Object">OBJ_FIRE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8989471977395652" type="kill_objects" />
+                        <action id="-9" name="Destroy" sid="9296192378433692" type="OBJ_FIRE" />
+                        <action id="-3" name="Create object" sid="1987651343721974" type="System">
+                            <param id="0" name="Object to create">OBJ_FIRE</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4992735602005695" type="System">
+                            <param id="0" name="Object to create">BASE_FIGURES</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5817818576445475" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6962168979566629" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_X</param>
+                            <param id="1" name="Value">BASE_FIGURES.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9683311970856869" type="System">
+                            <param id="0" name="Variable">NEW_OBJECT_Y</param>
+                            <param id="1" name="Value">BASE_FIGURES.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8173848187599179" type="System">
+                            <param id="0" name="Object to create">PLATFORMS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">portal_1.X</param>
+                            <param id="3" name="Y">portal_1.Y</param>
+                        </action>
+                        <action behavior="Pin2" id="0" name="Pin to object" sid="2862942938966165" type="OBJ_FIRE">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="2131146024169154" type="BASE_FIGURES">
+                            <param id="0" name="Pin to">PLATFORMS</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="1815814754144734" type="PLATFORMS" />
+                    </actions>
+                </event-block>
+                <event-block sid="4832977126284753">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4477751080085908" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="6975425382564019" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.Y</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">NEW_OBJECT_Y-65</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="7831079638883939" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.Y</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">NEW_OBJECT_Y-40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4336154064869469" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8199738759125805" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8222585964794415" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3702132965304425" type="anime_portal">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9714673363825769">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5401656452623336" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="4678748749739977" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.Y</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">NEW_OBJECT_Y+40</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="9720737350883942" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.Y</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">NEW_OBJECT_Y+65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2763024488018401" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7513103765480144" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5493313482068188" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8536298928975859" type="anime_portal">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9623354594660943">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3720628762031182" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="9491440117887568" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.X</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">NEW_OBJECT_X-65</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="8293940433727928" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.X</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">NEW_OBJECT_X-40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5093199821833684" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7939434956657855" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8565389623476565" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3555592384254707" type="anime_portal">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9893142080008808">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2153936425473101" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="4252061937613413" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.X</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">NEW_OBJECT_X+40</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="5703235868106784" type="System">
+                            <param id="0" name="First value">BASE_FIGURES.X</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">NEW_OBJECT_X+65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1171991198950396" type="PORTALS_1">
+                            <param id="0" name="Instance variable">PORT_NUMBER</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1326638929534476" type="PORTALS_2">
+                            <param id="0" name="Instance variable">PORT_NUMVER</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9794153033064611" type="BASE_FIGURES">
+                            <param id="0" name="Instance variable">NEW_OBJECT</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1243571854536391" type="anime_portal">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,862 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CHECK_FOR_RESULT</name>
+    <events>
+        <variable constant="0" name="SUCCESS" sid="1714744171207411" static="0" type="number">0</variable>
+        <variable constant="0" name="STOPING_ALL" sid="2131084349806741" static="0" type="number">0</variable>
+        <variable constant="0" name="START_CHECK_FOR_RESULTS_STARS" sid="746719066436806" static="0" type="number">0</variable>
+        <variable constant="0" name="START_CHECK_FOR_RESULTS_CIRCLES" sid="8263401717614762" static="0" type="number">0</variable>
+        <variable constant="0" name="START_CHECK_FOR_RESULTS_CUBES" sid="5399890644155368" static="0" type="number">0</variable>
+        <variable constant="0" name="START_CHECK_FOR_RESULTS_TRIANGLES" sid="3952677948245433" static="0" type="number">0</variable>
+        <variable constant="0" name="i_STARS" sid="2561128678985431" static="0" type="number">0</variable>
+        <variable constant="0" name="i_CUBES" sid="4217545487110092" static="0" type="number">0</variable>
+        <variable constant="0" name="i_CIRCLES" sid="808671377980899" static="0" type="number">0</variable>
+        <variable constant="0" name="i_TRIANGLES" sid="3828904766753877" static="0" type="number">0</variable>
+        <event-block sid="5267277754310788">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2773547857728705" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set size" sid="8352315921174615" type="ARRAY_CIRCLES_INSTANCES">
+                    <param id="0" name="Width">40</param>
+                    <param id="1" name="Height">1</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="1" name="Set size" sid="4619435797135934" type="ARRAY_CUBES_INSTANCES">
+                    <param id="0" name="Width">40</param>
+                    <param id="1" name="Height">1</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="1" name="Set size" sid="3412494950379521" type="ARRAY_STARS_INSTANCES">
+                    <param id="0" name="Width">40</param>
+                    <param id="1" name="Height">1</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="1" name="Set size" sid="5257832101188216" type="ARRAY_TRIANGLES_INSTANCES">
+                    <param id="0" name="Width">40</param>
+                    <param id="1" name="Height">1</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="139806067738968" type="System">
+                    <param id="0" name="Variable">prueva</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="5391441030562012" title="OVERLAPPING_FIGURES_WITH_MOLDS">
+            <sub-events>
+                <event-block sid="7076335970909814">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="3894750441119804" type="FIG_CIRCLES">
+                            <param id="0" name="Object">MO_CIRCLES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="1796743791048536" type="FIG_CIRCLES">
+                            <param id="0" name="Width">52</param>
+                            <param id="1" name="Height">48</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4284564996965597" type="FIG_CIRCLES">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="9989516058290075" type="FIG_CIRCLES">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6326313577985356">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="362537654178884" type="FIG_CIRCLES">
+                            <param id="0" name="Object">MO_CIRCLES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="9893413088320997" type="FIG_CIRCLES">
+                            <param id="0" name="Width">58</param>
+                            <param id="1" name="Height">52</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4015958264123196" type="FIG_CIRCLES">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2711437056189111" type="FIG_CIRCLES">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5156535272089375">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4387159022885583" type="FIG_CUBES">
+                            <param id="0" name="Object">MO_CUBES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="3601235799555079" type="FIG_CUBES">
+                            <param id="0" name="Width">54</param>
+                            <param id="1" name="Height">48</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="440293573693437" type="FIG_CUBES">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="9526752424139994" type="FIG_CUBES">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7061372742087209">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="9816492881168372" type="FIG_CUBES">
+                            <param id="0" name="Object">MO_CUBES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="1146510789528592" type="FIG_CUBES">
+                            <param id="0" name="Width">58</param>
+                            <param id="1" name="Height">52</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2289826092002906" type="FIG_CUBES">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="9859932555918834" type="FIG_CUBES">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1324185198796725">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="6778031376517923" type="FIG_STARS">
+                            <param id="0" name="Object">MO_STARS</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="8557517864943131" type="FIG_STARS">
+                            <param id="0" name="Width">54</param>
+                            <param id="1" name="Height">46</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7103073087932774" type="FIG_STARS">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6017481952643266" type="FIG_STARS">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9729378893951249">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="5077551066285388" type="FIG_STARS">
+                            <param id="0" name="Object">MO_STARS</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="2332713618662422" type="FIG_STARS">
+                            <param id="0" name="Width">58</param>
+                            <param id="1" name="Height">52</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="968492382189849" type="FIG_STARS">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="1928800905318969" type="FIG_STARS">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1672876069971282">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="1422480264633356" type="FIG_TRIANGLES">
+                            <param id="0" name="Object">MO_TRIANGLES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="6439838329075583" type="FIG_TRIANGLES">
+                            <param id="0" name="Width">56</param>
+                            <param id="1" name="Height">58</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6599562775874448" type="FIG_TRIANGLES">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="9759546523655997" type="FIG_TRIANGLES">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5669115515427719">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="3946524370024034" type="FIG_TRIANGLES">
+                            <param id="0" name="Object">MO_TRIANGLES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="8424488780587553" type="FIG_TRIANGLES">
+                            <param id="0" name="Width">58</param>
+                            <param id="1" name="Height">52</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2304236754459561" type="FIG_TRIANGLES">
+                            <param id="0" name="Instance variable">ON_BLOCK</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="9889594515853815" type="FIG_TRIANGLES">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="6619170321719872" title="CHECK_FOR_RESULT_ALL_INSTANCES">
+            <sub-events>
+                <event-block sid="1561416117337555">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8323960259068614" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_CIRCLES</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1033161979307335" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_CIRCLES</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7993393704850714" type="System">
+                            <param id="0" name="Variable">i_CIRCLES</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4704581961371983">
+                            <conditions>
+                                <condition id="-10" name="For" sid="7722321947622684" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">FIG_CIRCLES.Count</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5731357670223318">
+                                    <conditions>
+                                        <condition id="-13" name="Pick nth instance" sid="8689915638134412" type="System">
+                                            <param id="0" name="Object">FIG_CIRCLES</param>
+                                            <param id="1" name="Instance">i_CIRCLES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set at X" sid="7432540180981541" type="ARRAY_CIRCLES_INSTANCES">
+                                            <param id="0" name="X">i_CIRCLES</param>
+                                            <param id="1" name="Value">FIG_CIRCLES.ON_BLOCK</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="918959385672867" type="TEXT_ARRAY">
+                                            <param id="0" name="Text">self.Text &amp;&quot;CIRCLES  &quot;&amp;  i_CIRCLES &amp;&quot;: &quot;&amp; ARRAY_CIRCLES_INSTANCES.At(i_CIRCLES) &amp; NewLine</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="6913580328518277" type="System">
+                                            <param id="0" name="Variable">SUCCESS</param>
+                                            <param id="1" name="Value">ARRAY_CIRCLES_INSTANCES.At(i_CIRCLES)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="3811907310672414" type="TEXT_RESULT">
+                                            <param id="0" name="Text">&quot; INSTANCES &quot;&amp;FIG_CIRCLES.Count+FIG_CUBES.Count+FIG_STARS.COUNT+FIG_TRIANGLES.Count&amp;&quot;  == &quot;&amp;SUCCESS</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="704436286204233" type="System">
+                                            <param id="0" name="Variable">i_CIRCLES</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2519864170186011">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6617188132005488" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_CUBES</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2278885010375949" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_CUBES</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9216880510820306" type="System">
+                            <param id="0" name="Variable">i_CUBES</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="495517389595308">
+                            <conditions>
+                                <condition id="-10" name="For" sid="1274193858929645" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">FIG_CUBES.Count</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5794989457729792">
+                                    <conditions>
+                                        <condition id="-13" name="Pick nth instance" sid="7435670392484163" type="System">
+                                            <param id="0" name="Object">FIG_CUBES</param>
+                                            <param id="1" name="Instance">i_CUBES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set at X" sid="2917517316863459" type="ARRAY_CUBES_INSTANCES">
+                                            <param id="0" name="X">i_CUBES</param>
+                                            <param id="1" name="Value">FIG_CUBES.ON_BLOCK</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="5603169322334458" type="TEXT_ARRAY">
+                                            <param id="0" name="Text">self.Text &amp;&quot;CUBES  &quot;&amp;  i_CUBES &amp;&quot;: &quot;&amp; ARRAY_CUBES_INSTANCES.At(i_CUBES) &amp; NewLine</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="6474758835135091" type="System">
+                                            <param id="0" name="Variable">SUCCESS</param>
+                                            <param id="1" name="Value">ARRAY_CUBES_INSTANCES.At(i_CUBES)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="1734621409637903" type="TEXT_RESULT">
+                                            <param id="0" name="Text">&quot; INSTANCES &quot;&amp;FIG_CIRCLES.Count+FIG_CUBES.Count+FIG_STARS.COUNT+FIG_TRIANGLES.Count&amp;&quot;  == &quot;&amp;SUCCESS</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="966447575726854" type="System">
+                                            <param id="0" name="Variable">i_CUBES</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9894819165438561">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9440628398721" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_STARS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4411926493004572" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_STARS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9717896834846864" type="System">
+                            <param id="0" name="Variable">i_STARS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6778459903015443">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4799828029215558" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">FIG_STARS.Count</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1485198475291948">
+                                    <conditions>
+                                        <condition id="-13" name="Pick nth instance" sid="4017958543123296" type="System">
+                                            <param id="0" name="Object">FIG_STARS</param>
+                                            <param id="1" name="Instance">i_STARS</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set at X" sid="3308673538881932" type="ARRAY_STARS_INSTANCES">
+                                            <param id="0" name="X">i_STARS</param>
+                                            <param id="1" name="Value">FIG_STARS.ON_BLOCK</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="2535505952877582" type="TEXT_ARRAY">
+                                            <param id="0" name="Text">self.Text &amp;&quot;STARS &quot;&amp;  i_STARS &amp;&quot;: &quot;&amp; ARRAY_STARS_INSTANCES.At(i_STARS) &amp; NewLine</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="6292710287264476" type="System">
+                                            <param id="0" name="Variable">SUCCESS</param>
+                                            <param id="1" name="Value">ARRAY_STARS_INSTANCES.At(i_STARS)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="533303704033558" type="TEXT_RESULT">
+                                            <param id="0" name="Text">&quot; INSTANCES &quot;&amp;FIG_CIRCLES.Count+FIG_CUBES.Count+FIG_STARS.COUNT+FIG_TRIANGLES.Count&amp;&quot;  == &quot;&amp;SUCCESS</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="7638671475140964" type="System">
+                                            <param id="0" name="Variable">i_STARS</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6877406533090764">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4741347317568195" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_TRIANGLES</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9471257155886274" type="System">
+                            <param id="0" name="Variable">START_CHECK_FOR_RESULTS_TRIANGLES</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4305832086437898" type="System">
+                            <param id="0" name="Variable">i_TRIANGLES</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="464623477007283">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4400622523624678" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">FIG_TRIANGLES.Count</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="682505896944834">
+                                    <conditions>
+                                        <condition id="-13" name="Pick nth instance" sid="8223777435278397" type="System">
+                                            <param id="0" name="Object">FIG_TRIANGLES</param>
+                                            <param id="1" name="Instance">i_TRIANGLES</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Set at X" sid="7756383240416474" type="ARRAY_TRIANGLES_INSTANCES">
+                                            <param id="0" name="X">i_TRIANGLES</param>
+                                            <param id="1" name="Value">FIG_TRIANGLES.ON_BLOCK</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="3296612683744794" type="TEXT_ARRAY">
+                                            <param id="0" name="Text">self.Text &amp;&quot;TRIANGLES &quot;&amp;  i_TRIANGLES &amp;&quot;: &quot;&amp; ARRAY_TRIANGLES_INSTANCES.At(i_TRIANGLES) &amp; NewLine</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="614870482162407" type="System">
+                                            <param id="0" name="Variable">SUCCESS</param>
+                                            <param id="1" name="Value">ARRAY_TRIANGLES_INSTANCES.At(i_TRIANGLES)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="4378317065727445" type="TEXT_RESULT">
+                                            <param id="0" name="Text">&quot; INSTANCES &quot;&amp;FIG_CIRCLES.Count+FIG_CUBES.Count+FIG_STARS.COUNT+FIG_TRIANGLES.Count&amp;&quot;  == &quot;&amp;SUCCESS</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="3585340246024915" type="System">
+                                            <param id="0" name="Variable">i_TRIANGLES</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="6732315087080082" title="COMPARE_IF_WINING">
+            <sub-events>
+                <event-block sid="9916771455655192">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="785734232959506" type="System">
+                            <param id="0" name="Variable">SUCCESS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">FIG_CIRCLES.Count+FIG_CUBES.Count+FIG_STARS.Count+FIG_TRIANGLES.Count</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2324637168390058" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="383901600771921" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="1983089356486685" type="gr_QUIT" />
+                        <action id="-9" name="Destroy" sid="1295283741449258" type="GR_try_again" />
+                        <action id="0" name="Play" sid="8408802682702998" type="Audio">
+                            <param id="0" name="Audio file">WellDone</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3679557367265879" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2430802788655997" type="GR_success" />
+                        <action id="-3" name="Create object" sid="7907577849952492" type="System">
+                            <param id="0" name="Object to create">GR_success</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X</param>
+                            <param id="3" name="Y">scroll_to.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6938131826949241" type="System">
+                            <param id="0" name="Object to create">gr_next_level</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X+170</param>
+                            <param id="3" name="Y">scroll_to.Y+100</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1842159864542016" type="System">
+                            <param id="0" name="Object to create">gr_previous</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X-170</param>
+                            <param id="3" name="Y">scroll_to.Y+100</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3990437653820852" type="System">
+                            <param id="0" name="Object to create">gr_quit2</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X-70</param>
+                            <param id="3" name="Y">scroll_to.Y+100</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7328966021495047" type="System">
+                            <param id="0" name="Object to create">try_again2</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X+70</param>
+                            <param id="3" name="Y">scroll_to.Y+100</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3011368376369397" type="System">
+                            <param id="0" name="Variable">SUCCESS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2016269747469406" type="System">
+                            <param id="0" name="Object to create">gr_score</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X-200</param>
+                            <param id="3" name="Y">scroll_to.Y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7604030957690948" type="System">
+                            <param id="0" name="Object to create">FONT_SCORE</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X-100</param>
+                            <param id="3" name="Y">scroll_to.Y+3</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9784720295254838" type="System">
+                            <param id="0" name="Object to create">intructions_back</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X-110</param>
+                            <param id="3" name="Y">scroll_to.Y-92</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="2468468449639538" type="intructions_back">
+                            <param id="0" name="Width">220</param>
+                            <param id="1" name="Height">48</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="663431040784386" type="System">
+                            <param id="0" name="Object to create">gr_level_cleared</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">scroll_to.X</param>
+                            <param id="3" name="Y">scroll_to.Y-130</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="3257876746490372" type="FONT_SCORE">
+                            <param id="0" name="Width">300</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1987496314775331">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6969351508471603" type="System">
+                                    <param id="0" name="First value">int(WebStorage.LocalValue(&quot;LEVEL&quot;&amp;(LEVEL+1)))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="1489368376878315" type="WebStorage">
+                                    <param id="0" name="Key">&quot;LEVEL&quot;&amp;LEVEL+1</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="2" name="Set at X" sid="144112928979796" type="SAVE_GAME">
+                                    <param id="0" name="X">LEVEL+1</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6250337281070396">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4962180351487758" type="System">
+                                    <param id="0" name="Variable">COINS_LEVEL</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5383662952360343" type="System">
+                                    <param id="0" name="Object to create">bonus_star</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">scroll_to.X-70</param>
+                                    <param id="3" name="Y">scroll_to.Y-70</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8197927259432208" type="System">
+                                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6518643995732503">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="2190790856020045" type="System">
+                                            <param id="0" name="First value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;LEVEL))</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">SCORE_TEMP</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="8905769154335604" type="WebStorage">
+                                            <param id="0" name="Key">&quot;SCORE&quot;&amp;LEVEL</param>
+                                            <param id="1" name="Value">SCORE_TEMP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6544965323838034">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="6862085656466654" type="System">
+                                            <param id="0" name="Name">&quot;NEW SCORE&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">24</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="5122587392769933" type="System">
+                                            <param id="0" name="Variable">SCORE</param>
+                                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;i_MEMORY_GAME ) )</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="4827060313841735" type="System">
+                                            <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1706484239713372">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="699089839575257" type="System">
+                                            <param id="0" name="First value">WebStorage.LocalValue(&quot;LEVEL&quot;&amp;LEVEL)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="7185431726668551" type="WebStorage">
+                                            <param id="0" name="Key">&quot;LEVEL&quot;&amp;LEVEL</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="6127161069405018" type="System">
+                                            <param id="0" name="Variable">prueva</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4641312586504383">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="760031806477638" type="System">
+                                    <param id="0" name="Variable">COINS_LEVEL</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">MAX_COINS_LEVEL</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="4427103536537281" type="System">
+                                    <param id="0" name="Variable">COINS_LEVEL</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="4116781425843249" type="System">
+                                    <param id="0" name="Object to create">bonus_star</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">scroll_to.X-70</param>
+                                    <param id="3" name="Y">scroll_to.Y-70</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="780448212481363" type="System">
+                                    <param id="0" name="Object to create">bonus_star</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">scroll_to.X</param>
+                                    <param id="3" name="Y">scroll_to.Y-70</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8009817537941925" type="System">
+                                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="7562595752352506">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7614604895263451" type="System">
+                                            <param id="0" name="First value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;LEVEL))</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">SCORE_TEMP</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="1252975077138409" type="WebStorage">
+                                            <param id="0" name="Key">&quot;SCORE&quot;&amp;LEVEL</param>
+                                            <param id="1" name="Value">SCORE_TEMP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2758372799641626">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="8222432521997799" type="System">
+                                            <param id="0" name="Name">&quot;NEW SCORE&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">24</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="3938727330044291" type="System">
+                                            <param id="0" name="Variable">SCORE</param>
+                                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;i_MEMORY_GAME ) )</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="8153326360564777" type="System">
+                                            <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8898468421322563">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="7822537854421262" type="System">
+                                            <param id="0" name="First value">WebStorage.LocalValue(&quot;LEVEL&quot;&amp;LEVEL)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="3984660661695534" type="WebStorage">
+                                            <param id="0" name="Key">&quot;LEVEL&quot;&amp;LEVEL </param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9421204421674563">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9583921731202876" type="System">
+                                    <param id="0" name="Variable">COINS_LEVEL</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">MAX_COINS_LEVEL</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1044396676122555" type="System">
+                                    <param id="0" name="Object to create">bonus_star</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">scroll_to.X-70</param>
+                                    <param id="3" name="Y">scroll_to.Y-70</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="5635421236629405" type="System">
+                                    <param id="0" name="Object to create">bonus_star</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">scroll_to.X</param>
+                                    <param id="3" name="Y">scroll_to.Y-70</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4627556199093515" type="System">
+                                    <param id="0" name="Object to create">bonus_star</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">scroll_to.X+70</param>
+                                    <param id="3" name="Y">scroll_to.Y-70</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5169101411746138" type="System">
+                                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9235039856757528">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1696358371778312" type="System">
+                                            <param id="0" name="First value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;LEVEL))</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">SCORE_TEMP</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="2060154043474731" type="WebStorage">
+                                            <param id="0" name="Key">&quot;SCORE&quot;&amp;LEVEL</param>
+                                            <param id="1" name="Value">SCORE_TEMP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5444146208483763">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="2819330112084176" type="System">
+                                            <param id="0" name="Name">&quot;NEW SCORE&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">24</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="2564174024731224" type="System">
+                                            <param id="0" name="Variable">SCORE</param>
+                                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;i_MEMORY_GAME ) )</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="5932725410854531" type="System">
+                                            <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6398511260450082">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="9651116775716386" type="System">
+                                            <param id="0" name="First value">WebStorage.LocalValue(&quot;LEVEL&quot;&amp;LEVEL)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="2098481397013926" type="WebStorage">
+                                            <param id="0" name="Key">&quot;LEVEL&quot;&amp;LEVEL</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-block sid="5660538343884348">
+            <conditions>
+                <condition id="10" name="On Nth touch start" sid="500863365092996" type="Touch">
+                    <param id="0" name="Touch number">0</param>
+                </condition>
+                <condition id="4" name="Is touching object" sid="4657040957954013" type="Touch">
+                    <param id="0" name="Object">FIG_STARS</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6886053935801704" type="TEXT_RESULT">
+                    <param id="0" name="Text">FIG_STARS.UID&amp;&quot; &quot;&amp;FIG_STARS.ON_BLOCK&amp; &quot; INST &quot;&amp;FIG_STARS.COUNT&amp;&quot;  == &quot;&amp;SUCCESS</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1970985714549063">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9318371661185646" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1438922009769614" type="Text2">
+                    <param id="0" name="Text">&quot;est&quot;&amp;WebStorage.LocalValue(&quot;LEVEL&quot;&amp;LEVEL)&amp;&quot;pru&quot;&amp;prueva</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

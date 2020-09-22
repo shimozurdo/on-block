@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CHANGE_ACTIVATORS</name>
+    <events>
+        <variable constant="0" name="TIME_DT_CHANGE" sid="5604715208872811" static="0" type="number">0</variable>
+        <variable constant="0" name="TOTAL_TIME_CHANGE_ACTIVATORS" sid="7182960216567171" static="0" type="number">50</variable>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="1494180583829939" title="CHANGE_ACTIVATORS_EVERY_SECONS">
+            <sub-events>
+                <event-block sid="3869457604614962">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="345904801951472" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="9119004179099964" type="System">
+                            <param id="0" name="Variable">TIME_DT_CHANGE</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2081015857593296">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8725845482866796" type="System">
+                            <param id="0" name="Variable">TIME_DT_CHANGE</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">TOTAL_TIME_CHANGE_ACTIVATORS</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9378052605721847" type="System">
+                            <param id="0" name="Variable">TIME_DT_CHANGE</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+    </events>
+</c2eventsheet>

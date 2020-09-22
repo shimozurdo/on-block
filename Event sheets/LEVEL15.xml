@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LEVEL15</name>
+    <events>
+        <include>GENERAL</include>
+        <include>KEYBOARD</include>
+        <include>MECHANISM_ARROWS_MOTION</include>
+        <include>CALCULATE_NEW_POSITIONS</include>
+        <include>CHECK_FOR_RESULT</include>
+        <include>PORTAL_SINGLE</include>
+        <include>KILLER_FIGURES</include>
+        <event-block sid="277034179407679">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8921487857968333" type="System" />
+                <condition id="-11" name="For Each" sid="8451915204763702" type="System">
+                    <param id="0" name="Object">FIGURES</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="8977931984393443" type="FIGURES">
+                    <param id="0" name="Object">BASE_FIGURES</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="4364564355770677" type="FIGURES">
+                    <param id="0" name="Pin to">BASE_FIGURES</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9162703753756452">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5703089939451458" type="System" />
+                <condition id="-11" name="For Each" sid="8584263874421755" type="System">
+                    <param id="0" name="Object">OBJECTS</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="3902792892451576" type="OBJECTS">
+                    <param id="0" name="Object">BASE_FIGURES</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="9258513253380039" type="OBJECTS">
+                    <param id="0" name="Pin to">BASE_FIGURES</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5125229614709694">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7337024662086805" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1077305819898423" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">15</param>
+                </action>
+                <action id="-9" name="Set value" sid="7717221279648444" type="System">
+                    <param id="0" name="Variable">SCORE_TEMP</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3008038927686575" type="System">
+                    <param id="0" name="Variable">SCORE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1107304294006274" type="System">
+                    <param id="0" name="Variable">SCORE</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot; ) )</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9384660151927385" type="BASE_FIGURES">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3732936839029472" type="PLATFORMS">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="8729509945398164" type="FONT_LEVEL">
+                    <param id="0" name="Text">LEVEL</param>
+                </action>
+                <action id="-9" name="Set value" sid="4784524876840527" type="System">
+                    <param id="0" name="Variable">MOVIMENTS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="5633045075537417" type="System">
+                    <param id="0" name="Variable">SUCCESS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8624423557675284" type="System">
+                    <param id="0" name="Variable">STOPING_ALL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3033667700567056" type="System">
+                    <param id="0" name="Variable">MAX_COINS_LEVEL</param>
+                    <param id="1" name="Value">22</param>
+                </action>
+                <action id="-9" name="Set value" sid="185539473726717" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>INTERFACE GRAPHICS FOR EACH LEVEL</comment>
+        <event-block sid="4500525199831194">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="8932515623716161" type="Touch" />
+                <condition id="4" name="Is touching object" sid="738586983419078" type="Touch">
+                    <param id="0" name="Object">gr_next_level</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7817650365422119" type="System">
+                    <param id="0" name="Layout">level16</param>
+                </action>
+                <action id="-10" name="Add to" sid="8016500120710357" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="525120916323569" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4911088256638951">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="1105332302393582" type="Touch" />
+                <condition id="4" name="Is touching object" sid="3089095934958653" type="Touch">
+                    <param id="0" name="Object">GR_try_again</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4251526593038057" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8159022613599584" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="6656605040626779" type="System">
+                    <param id="0" name="Layout">level15</param>
+                </action>
+                <action id="-9" name="Set value" sid="9534673607743036" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4093738193296775">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9922288050792656" type="Touch" />
+                <condition id="4" name="Is touching object" sid="5278040303672626" type="Touch">
+                    <param id="0" name="Object">gr_previous</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7064930321887772" type="System">
+                    <param id="0" name="Layout">level14</param>
+                </action>
+                <action id="-9" name="Set value" sid="5775874087919083" type="System">
+                    <param id="0" name="Variable">MOVIMENTS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4458688490536127" type="System">
+                    <param id="0" name="Variable">SUCCESS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="166583506029713" type="System">
+                    <param id="0" name="Variable">STOPING_ALL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="2911764730333705" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6014614627208229" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4635335917238666">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9801895892993133" type="Touch" />
+                <condition id="4" name="Is touching object" sid="9412577346054894" type="Touch">
+                    <param id="0" name="Object">try_again2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6990477024502068" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6463761260321337" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8899415547581684" type="System">
+                    <param id="0" name="Layout">level16</param>
+                </action>
+                <action id="-9" name="Set value" sid="6687707589148773" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

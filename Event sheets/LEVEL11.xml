@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LEVEL11</name>
+    <events>
+        <include>GENERAL</include>
+        <include>KEYBOARD</include>
+        <include>MECHANISM_ARROWS_MOTION</include>
+        <include>CALCULATE_NEW_POSITIONS</include>
+        <include>CHECK_FOR_RESULT</include>
+        <include>PORTAL_SINGLE</include>
+        <include>KILLER_FIGURES</include>
+        <event-block sid="7417600956929751">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3022814288519704" type="System" />
+                <condition id="-11" name="For Each" sid="2164231353181579" type="System">
+                    <param id="0" name="Object">FIGURES</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="1346912856019794" type="FIGURES">
+                    <param id="0" name="Object">BASE_FIGURES</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="5861393761460731" type="FIGURES">
+                    <param id="0" name="Pin to">BASE_FIGURES</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8830865823265916">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6450732826677998" type="System" />
+                <condition id="-11" name="For Each" sid="5729050151153452" type="System">
+                    <param id="0" name="Object">OBJECTS</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="3337516187691931" type="OBJECTS">
+                    <param id="0" name="Object">BASE_FIGURES</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8881069504637468" type="OBJECTS">
+                    <param id="0" name="Pin to">BASE_FIGURES</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5606844827321619">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5678265609554681" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7455983612515384" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">11</param>
+                </action>
+                <action id="-9" name="Set value" sid="6436108863216489" type="System">
+                    <param id="0" name="Variable">SCORE_TEMP</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="5936648448765444" type="System">
+                    <param id="0" name="Variable">SCORE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2140520305474949" type="System">
+                    <param id="0" name="Variable">SCORE</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot; ) )</param>
+                </action>
+                <action id="-15" name="Set visible" sid="577424846508198" type="BASE_FIGURES">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9167795967225944" type="PLATFORMS">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="9222435141065901" type="FONT_LEVEL">
+                    <param id="0" name="Text">LEVEL</param>
+                </action>
+                <action id="-9" name="Set value" sid="5561078925209837" type="System">
+                    <param id="0" name="Variable">MOVIMENTS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8460409156604054" type="System">
+                    <param id="0" name="Variable">SUCCESS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4275275719115847" type="System">
+                    <param id="0" name="Variable">STOPING_ALL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8354145186260649" type="System">
+                    <param id="0" name="Variable">MAX_COINS_LEVEL</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-9" name="Set value" sid="9497782702267226" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>INTERFACE GRAPHICS FOR EACH LEVEL</comment>
+        <event-block sid="8566013151655748">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="263615755647231" type="Touch" />
+                <condition id="4" name="Is touching object" sid="5288536863581064" type="Touch">
+                    <param id="0" name="Object">gr_next_level</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7129038549638961" type="System">
+                    <param id="0" name="Layout">level12</param>
+                </action>
+                <action id="-10" name="Add to" sid="7437877916805394" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="2283967379278522" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5310099123978662">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9943021877327617" type="Touch" />
+                <condition id="4" name="Is touching object" sid="8038878602308599" type="Touch">
+                    <param id="0" name="Object">GR_try_again</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3844232327784314" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5526635183667353" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="9478520016326181" type="System">
+                    <param id="0" name="Layout">level11</param>
+                </action>
+                <action id="-9" name="Set value" sid="3679068932980593" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3321706076514777">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="2376443536626003" type="Touch" />
+                <condition id="4" name="Is touching object" sid="1325813699906165" type="Touch">
+                    <param id="0" name="Object">gr_previous</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4846751673931316" type="System">
+                    <param id="0" name="Layout">level10</param>
+                </action>
+                <action id="-9" name="Set value" sid="2588446518854727" type="System">
+                    <param id="0" name="Variable">MOVIMENTS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8004607044220747" type="System">
+                    <param id="0" name="Variable">SUCCESS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8715099486160807" type="System">
+                    <param id="0" name="Variable">STOPING_ALL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="501703915243651" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4438070287926499" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4469470387356681">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="6414468075779102" type="OBJ_BOX_INCOGNIT">
+                    <param id="0" name="Object">INCOGNITS</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="7157443241189931" type="INCOGNITS">
+                    <param id="0" name="Instance variable">TYPE</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="2903076560438559" type="OBJ_BOX_INCOGNIT">
+                    <param id="0" name="Object">PLATFORMS</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1122917366518037" type="OBJ_BOX_INCOGNIT" />
+                <action id="-9" name="Destroy" sid="5714969097343477" type="PLATFORMS" />
+                <action id="-3" name="Create object" sid="5566164598250441" type="System">
+                    <param id="0" name="Object to create">explosion4</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">176</param>
+                    <param id="3" name="Y">112</param>
+                </action>
+                <action id="-9" name="Destroy" sid="3204380074233292" type="INCOGNITS" />
+                <action id="0" name="Play" sid="2139732202390929" type="Audio">
+                    <param id="0" name="Audio file">incognit</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="3578245185778866" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="9683000322384034" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+112</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-3" name="Create object" sid="1965284659146916" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+112</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-16" name="Wait" sid="4640175670263479" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="3642303897419392" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+176</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-3" name="Create object" sid="9909765744266562" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+176</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-16" name="Wait" sid="2903624267119346" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="3753779723197666" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+240</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-3" name="Create object" sid="4179327508785657" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+240</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-16" name="Wait" sid="2910878393295004" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="6375386278366101" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-3" name="Create object" sid="7016124588966732" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-16" name="Wait" sid="8830938371354838" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="7486026896935608" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+176</param>
+                    <param id="3" name="Y">PIVOT.Y+176</param>
+                </action>
+                <action id="-3" name="Create object" sid="4774745306629297" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+176</param>
+                    <param id="3" name="Y">PIVOT.Y+176</param>
+                </action>
+                <action id="-16" name="Wait" sid="4193057834788616" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="8784068130200946" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+240</param>
+                    <param id="3" name="Y">PIVOT.Y+176</param>
+                </action>
+                <action id="-3" name="Create object" sid="9316960742096971" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+240</param>
+                    <param id="3" name="Y">PIVOT.Y+176</param>
+                </action>
+                <action id="-16" name="Wait" sid="3875403884463901" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="3336930177330033" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+176</param>
+                </action>
+                <action id="-3" name="Create object" sid="1140937204883318" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+176</param>
+                </action>
+                <action id="-16" name="Wait" sid="1759108746375915" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="5454629779852664" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+240</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-3" name="Create object" sid="2531516481471319" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+240</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-16" name="Wait" sid="6139155342965564" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="4483051957420576" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-3" name="Create object" sid="2089580935383073" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-16" name="Wait" sid="42848948161672" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="1528164192386948" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+368</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-3" name="Create object" sid="4691362167174652" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+368</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-16" name="Wait" sid="7922221987622511" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="6619446477778691" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+432</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-3" name="Create object" sid="3047567068799507" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+432</param>
+                    <param id="3" name="Y">PIVOT.Y+240</param>
+                </action>
+                <action id="-16" name="Wait" sid="5183221734304883" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="7289053889839227" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-3" name="Create object" sid="303167678021368" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+304</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-16" name="Wait" sid="9389617483762687" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="9358950664528572" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+368</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-3" name="Create object" sid="6582437789395421" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+368</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-16" name="Wait" sid="722245371629171" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="8575782900924497" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+432</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-3" name="Create object" sid="6915161908855824" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.Y+432</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-16" name="Wait" sid="8591624305702675" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="272968292497343" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+496</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-3" name="Create object" sid="5103471488248168" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+496</param>
+                    <param id="3" name="Y">PIVOT.Y+304</param>
+                </action>
+                <action id="-16" name="Wait" sid="1461389280892323" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="5160168620497474" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+368</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-3" name="Create object" sid="6275075471868888" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+368</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-16" name="Wait" sid="7972648454840454" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="2472050217959794" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+432</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-3" name="Create object" sid="7413792843769671" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+432</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-16" name="Wait" sid="4728091779433727" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="4742430008882888" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+496</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-3" name="Create object" sid="1389865019282755" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+496</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-16" name="Wait" sid="708390299147355" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="1517051581867044" type="System">
+                    <param id="0" name="Object to create">coin_yellow</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+560</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-3" name="Create object" sid="9559614168499764" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+560</param>
+                    <param id="3" name="Y">PIVOT.Y+368</param>
+                </action>
+                <action id="-16" name="Wait" sid="6673529902183559" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-3" name="Create object" sid="2277316401163708" type="System">
+                    <param id="0" name="Object to create">coin_magic</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">PIVOT.X+624</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+                <action id="-3" name="Create object" sid="8728797688173085" type="System">
+                    <param id="0" name="Object to create">explosion3</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">PIVOT.X+624</param>
+                    <param id="3" name="Y">PIVOT.Y+112</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4925406691935875">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="6656954575256596" type="Touch" />
+                <condition id="4" name="Is touching object" sid="85481432678579" type="Touch">
+                    <param id="0" name="Object">try_again2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8796976721132237" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8731988506167392" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="7713054460150861" type="System">
+                    <param id="0" name="Layout">level11</param>
+                </action>
+                <action id="-9" name="Set value" sid="1470764256337852" type="System">
+                    <param id="0" name="Variable">COINS_LEVEL</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

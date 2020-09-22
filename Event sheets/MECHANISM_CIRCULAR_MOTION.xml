@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MECHANISM_CIRCULAR_MOTION</name>
+    <events>
+        <variable constant="0" name="TURN" sid="1946184828263731" static="0" type="number">0</variable>
+        <variable constant="0" name="START_CIRCULAR_MOTION" sid="2899627645018589" static="0" type="number">0</variable>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="9419399351851809" title="TOUCH_ACTIVATORS_CIRCULARS">
+            <sub-events>
+                <comment>touch the right activator</comment>
+                <event-block sid="2808025416631621">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="9926900199612808" type="Touch">
+                            <param id="0" name="Object">activator_right</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7085991026456679" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9309198092778046" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8476966210501022" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1243981927658989" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2411821888818396" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9628980585910525" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8736487068084223" type="System">
+                            <param id="0" name="Variable">MOVIMENTS</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="5821419798389704" type="FIGURES" />
+                        <action id="-9" name="Destroy" sid="306109460748044" type="motion_circular" />
+                        <action id="-3" name="Create object" sid="3147027101593374" type="System">
+                            <param id="0" name="Object to create">motion_circular</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">activator_right.X</param>
+                            <param id="3" name="Y">activator_right.Y</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="3317896464826467" type="motion_circular" />
+                        <action behavior="Rotate" id="0" name="Set speed" sid="8145854622120943" type="motion_circular">
+                            <param id="0" name="Speed">250</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7856632700443127" type="motion_circular">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="519260615109724">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="1343331727032763" type="PLATFORMS">
+                                    <param id="0" name="Object">motion_circular</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="643617302982019" type="PLATFORMS">
+                                    <param id="0" name="Pin to">motion_circular</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5502876173891922">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3070541335010234" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">90</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2730058293753903" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">120</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9495842240543156" type="motion_circular" />
+                        <action id="-9" name="Set value" sid="5194872970091056" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5273228463312946" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8335836322673886" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1880680910035414" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+                <comment>touch the left activator</comment>
+                <event-block sid="1315159474276036">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6429517967384999" type="Touch">
+                            <param id="0" name="Object">activator_left</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1400199386479737" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8837000598858158" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6748806480307913" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1917082775138456" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9570722020472997" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4717651645686185" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6797457852683171" type="System">
+                            <param id="0" name="Variable">MOVIMENTS</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="2974211183217194" type="FIGURES" />
+                        <action id="-9" name="Destroy" sid="3348696492605867" type="motion_circular" />
+                        <action id="-3" name="Create object" sid="121977050067534" type="System">
+                            <param id="0" name="Object to create">motion_circular</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">activator_left.X</param>
+                            <param id="3" name="Y">activator_left.Y</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="8215363502953215" type="motion_circular" />
+                        <action behavior="Rotate" id="0" name="Set speed" sid="4759004795906992" type="motion_circular">
+                            <param id="0" name="Speed">-250</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6375932122384801" type="motion_circular">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4039775129953631">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="3804324001160015" type="PLATFORMS">
+                                    <param id="0" name="Object">motion_circular</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="8274401024009716" type="PLATFORMS">
+                                    <param id="0" name="Pin to">motion_circular</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3626411489438017">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3274974777988645" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">270</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2109817280456806" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">240</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="920395391779194" type="motion_circular" />
+                        <action id="-9" name="Set value" sid="3973374503413869" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5914069133252469" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="827005345507815" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6116607797621256" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+    </events>
+</c2eventsheet>

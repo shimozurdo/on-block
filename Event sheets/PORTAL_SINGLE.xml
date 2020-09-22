@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PORTAL_SINGLE</name>
+    <events>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="8541299476541743" title="SOME_COLLISIONS" />
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-block sid="4725855684612005">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4171752032666597" type="PLATFORMS">
+                    <param id="0" name="Object">PORTAL_SINGLES_MASTER</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9183276487796444" type="System">
+                    <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5104957745777742" type="System">
+                    <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2009303177340708" type="System">
+                    <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7477102149162867" type="System">
+                    <param id="0" name="Variable">STOPING_ALL</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6275069085104686">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="247040581408221" type="PORTAL_SINGLES_MASTER">
+                            <param id="0" name="Instance variable">PORTAL_REPOSITION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="3561873702490067" type="PLATFORMS">
+                            <param id="0" name="Object">PORTAL_SINGLES_MASTER</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5860920967861038" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8250213650248314" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">PORTAL_SINGLES_MASTER.X+5</param>
+                            <param id="3" name="Y">PORTAL_SINGLES_MASTER.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3548360586244927" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">portal_reposition_1.X+5</param>
+                            <param id="3" name="Y">portal_reposition_1.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="4799707605324324" type="Audio">
+                            <param id="0" name="Audio file">teleportnet</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2074846435202489" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="253715542307178" type="PLATFORMS">
+                            <param id="0" name="Object">portal_reposition_1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2193075552843241" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6886956149881418">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1347761205519406" type="PORTAL_SINGLES_MASTER">
+                            <param id="0" name="Instance variable">PORTAL_REPOSITION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="4926849540511278" type="PLATFORMS">
+                            <param id="0" name="Object">PORTAL_SINGLES_MASTER</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6749750311371699" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5242374123786041" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">PORTAL_SINGLES_MASTER.X+5</param>
+                            <param id="3" name="Y">PORTAL_SINGLES_MASTER.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6865245852206404" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">portal_reposition_2.X+5</param>
+                            <param id="3" name="Y">portal_reposition_2.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="1388382092367959" type="Audio">
+                            <param id="0" name="Audio file">teleportnet</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9332159868978088" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="3106028592739741" type="PLATFORMS">
+                            <param id="0" name="Object">portal_reposition_2</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6044183884376505" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8246903835448215">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8823057936238377" type="PORTAL_SINGLES_MASTER">
+                            <param id="0" name="Instance variable">PORTAL_REPOSITION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="614726584885089" type="PLATFORMS">
+                            <param id="0" name="Object">PORTAL_SINGLES_MASTER</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8975626102792674" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3836863762335175" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">PORTAL_SINGLES_MASTER.X+5</param>
+                            <param id="3" name="Y">PORTAL_SINGLES_MASTER.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5846316858977274" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">portal_reposition_3.X+5</param>
+                            <param id="3" name="Y">portal_reposition_3.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="6300196696179685" type="Audio">
+                            <param id="0" name="Audio file">teleportnet</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3361485533262596" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="9174591605482049" type="PLATFORMS">
+                            <param id="0" name="Object">portal_reposition_3</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="680030517604426" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8911198675317004">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1448742037523291" type="PORTAL_SINGLES_MASTER">
+                            <param id="0" name="Instance variable">PORTAL_REPOSITION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="3892905209120288" type="PLATFORMS">
+                            <param id="0" name="Object">PORTAL_SINGLES_MASTER</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5874752343791779" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4095040446066562" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">PORTAL_SINGLES_MASTER.X+5</param>
+                            <param id="3" name="Y">PORTAL_SINGLES_MASTER.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1131425005531133" type="System">
+                            <param id="0" name="Object to create">teleport</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">portal_reposition_4.X+5</param>
+                            <param id="3" name="Y">portal_reposition_4.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="3042111158519562" type="Audio">
+                            <param id="0" name="Audio file">teleportnet</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1616562666541693" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="3745631060663031" type="PLATFORMS">
+                            <param id="0" name="Object">portal_reposition_4</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6293017116215485" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1502859451282619">
+            <conditions>
+                <condition id="4" name="On finished" sid="7255191895890439" type="TELEPORTATION">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8506211460643295" type="TELEPORTATION" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CALCULATE_NEW_POSITIONS</name>
+    <events>
+        <event-group description="" sid="1153844015663521" title="RECALCULATE_POSITIONS">
+            <sub-events>
+                <event-block sid="5012150224900242">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6160269087433944" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5485889796023304" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7595700354421705" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2816198826886215">
+                            <conditions>
+                                <condition id="-10" name="For" sid="3117266426950248" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">16</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5763447796029375">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="9933381666893515" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="Y co-ordinate">0</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="93200755094632" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">CALCULATE_POSITIONS+16</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="6189813122320692" type="PLATFORMS">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">CALCULATE_POSITIONS+80</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="3625578761962676" type="PLATFORMS">
+                                            <param id="0" name="X">CALCULATE_POSITIONS+48</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6089500611805328">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="6337923669576135" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="Y co-ordinate">0</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="1203133648036936" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">CALCULATE_POSITIONS+81</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="183401549712824" type="PLATFORMS">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">CALCULATE_POSITIONS+144</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="7966410607638664" type="PLATFORMS">
+                                            <param id="0" name="X">CALCULATE_POSITIONS+112</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9332055203470654">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="5962464591939224" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">0</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="6828480735469971" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="Y co-ordinate">CALCULATE_POSITIONS+16</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="7285646306197974" type="PLATFORMS">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Y co-ordinate">CALCULATE_POSITIONS+80</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="2017155912205965" type="PLATFORMS">
+                                            <param id="0" name="Y">CALCULATE_POSITIONS+48</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="47082158009173">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="3532410941870709" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">0</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="8811220974408363" type="PLATFORMS">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="Y co-ordinate">CALCULATE_POSITIONS+81</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="6369411942016125" type="PLATFORMS">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Y co-ordinate">CALCULATE_POSITIONS+144</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="6973615076545702" type="PLATFORMS">
+                                            <param id="0" name="Y">CALCULATE_POSITIONS+112</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4781254475116428">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="1464159977134165" type="System">
+                                            <param id="0" name="Variable">LOOPS</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="4775079409086205" type="System">
+                                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                                            <param id="1" name="Value">64</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="732933304563242">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3755667020731919" type="System">
+                    <param id="0" name="Variable">LOOPS</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6713181413101909" type="TEXT_ARRAY">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="8977400167685127" type="System">
+                    <param id="0" name="Variable">SUCCESS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="9012865467237269" type="System">
+                    <param id="0" name="Variable">START_CHECK_FOR_RESULTS_CIRCLES</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4067120496467312" type="System">
+                    <param id="0" name="Variable">START_CHECK_FOR_RESULTS_CUBES</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="9182237766566787" type="System">
+                    <param id="0" name="Variable">START_CHECK_FOR_RESULTS_STARS</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6716243319940388" type="System">
+                    <param id="0" name="Variable">START_CHECK_FOR_RESULTS_TRIANGLES</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="6234035470327172" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-9" name="Set value" sid="6246219739993874" type="System">
+                    <param id="0" name="Variable">LOOPS</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

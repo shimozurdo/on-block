@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BUTTONS_EVENTS2</name>
+    <events>
+        <variable constant="0" name="prueva2" sid="3262162318815844" static="0" type="number">0</variable>
+        <event-block sid="4352816701743937">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3333500360101598" type="PLATFORMS">
+                    <param id="0" name="Object">button_blue</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="4977913826769522" type="button_blue">
+                    <param id="0" name="Instance variable">ON_OFF2</param>
+                    <param id="1" name="Value">button_blue.ON_OFF2*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9358341947907028">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2165172271213135" type="PLATFORMS">
+                    <param id="0" name="Object">button_green</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="3457252803614376" type="button_green">
+                    <param id="0" name="Instance variable">ON_OFF2</param>
+                    <param id="1" name="Value">button_green.ON_OFF2*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8779245844448657">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="976470536801153" type="PLATFORMS">
+                    <param id="0" name="Object">button_red</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="9632852679359591" type="button_red">
+                    <param id="0" name="Instance variable">ON_OFF2</param>
+                    <param id="1" name="Value">button_red.ON_OFF2*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="943513303090853">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="864162770838596" type="PLATFORMS">
+                    <param id="0" name="Object">button_yellow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="1824402688752483" type="button_yellow">
+                    <param id="0" name="Instance variable">ON_OFF2</param>
+                    <param id="1" name="Value">button_yellow.ON_OFF2*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="439673139907155">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4105509774266116" type="request_button_red">
+                    <param id="0" name="Object">SAW_BLADES</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="7509576582441801" type="request_button_red">
+                    <param id="0" name="Object">OBJ_FIRE</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5070418930674862">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1790363511997593" type="button_red">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="2794040203833134" type="SAW_BLADES">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9020374708077345" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="9076574597307303" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="3450075914140412" type="button_red">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2696636193845172">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9104654723861459" type="button_red">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="7393062716776472" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8110398399839241" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1313018941503498" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6822284059251409" type="button_red">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="6325803714367701">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="9026620903520746" type="request_button_yellow">
+                    <param id="0" name="Object">SAW_BLADES</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="7015914081117292" type="request_button_yellow">
+                    <param id="0" name="Object">OBJ_FIRE</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5226370008729811">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7570228028088448" type="button_yellow">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="2545465395659015" type="SAW_BLADES">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5836761124059585" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2385146944396241" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6077029426949579" type="button_yellow">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1727137064808545">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3153540127579457" type="button_yellow">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="8974771084275164" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5631607799149204" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3869169086415805" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="5508552633017869" type="button_yellow">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="9918428991497207">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="9193982098308184" type="request_button_green">
+                    <param id="0" name="Object">SAW_BLADES</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="6313380949580981" type="request_button_green">
+                    <param id="0" name="Object">OBJ_FIRE</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3978111901882818">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4579408099839787" type="button_green">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="1387518026857004" type="SAW_BLADES">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3738016435212762" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8065017006655043" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2356256097393752" type="button_green">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9606839115875716">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2744809727664379" type="button_green">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="2779537411676793" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8404422375186308" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2889396735112657" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="62769118910874" type="button_green">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="686839521915286">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4224749734077765" type="request_button_blue">
+                    <param id="0" name="Object">SAW_BLADES</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="1874291794877761" type="request_button_blue">
+                    <param id="0" name="Object">OBJ_FIRE</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7163738570661362" type="DESACTIVATE_BUTTONS" />
+            </actions>
+            <sub-events>
+                <event-block sid="5113440802314787">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1365124338504224" type="button_blue">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="7682519298593599" type="SAW_BLADES">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6863149883114617" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4282443606214983" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="1940934463103412" type="button_blue">
+                            <param id="0" name="Animation">&quot;anim1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3575716310717138">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8435332451924534" type="button_blue">
+                            <param id="0" name="Instance variable">ON_OFF2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="1132423720490854" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4695965527044904" type="SAW_BLADES">
+                            <param id="0" name="Instance variable">ON</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3173694648615264" type="OBJ_FIRE">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="1982745273298731" type="button_blue">
+                            <param id="0" name="Animation">&quot;anim2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

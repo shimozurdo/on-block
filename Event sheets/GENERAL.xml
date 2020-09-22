@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GENERAL</name>
+    <events>
+        <variable constant="0" name="DELAY_NAV" sid="7924457807120757" static="0" type="number">0</variable>
+        <event-block sid="3352517034169196">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9568704094126825" type="System" />
+                <condition id="-11" name="For Each" sid="8302389140207931" type="System">
+                    <param id="0" name="Object">BASE_SAW_BLADE</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="3469583469548579" type="BASE_SAW_BLADE">
+                    <param id="0" name="Object">SAW_BLADES</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="2542436320327331" type="BASE_SAW_BLADE">
+                    <param id="0" name="Pin to">SAW_BLADES</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="727286669650397">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5479436570758343" type="System" />
+                <condition id="-11" name="For Each" sid="837395821568012" type="System">
+                    <param id="0" name="Object">REQUEST_BUTTONS</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="9659458222311436" type="REQUEST_BUTTONS">
+                    <param id="0" name="Object">BASE_SAW_BLADE</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="9294084205562506" type="REQUEST_BUTTONS">
+                    <param id="0" name="Pin to">BASE_SAW_BLADE</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7005329706474248">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6756995871106128" type="BASE_FIGURES">
+                    <param id="0" name="Object">PLATFORMS</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9393865363609172" type="System">
+                    <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="7659061423367637" type="BASE_FIGURES">
+                    <param id="0" name="Pin to">PLATFORMS</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3633526392376028">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="478527099091243" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4602931487573504" type="motion_lineal">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6911026092226853" type="portal_single_master">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4271404709429841" type="pair_horizontal_mov">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6112151720307828" type="pair_vertical_mov">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7611177736692866">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9293091430835712" type="Touch" />
+                <condition id="4" name="Is touching object" sid="2646059927531316" type="Touch">
+                    <param id="0" name="Object">gr_QUIT</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="4292867818308274" type="gr_QUIT">
+                    <param id="0" name="Instance variable">CONTINUE</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3832119003191484" type="System">
+                    <param id="0" name="Layout">continue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7780953611785654">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="5546156677030056" type="Touch" />
+                <condition id="4" name="Is touching object" sid="4792663927403073" type="Touch">
+                    <param id="0" name="Object">gr_QUIT</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="4600804041495166" type="gr_QUIT">
+                    <param id="0" name="Instance variable">CONTINUE</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9405771991379163" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7341030885227839">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="451042493103272" type="Touch" />
+                <condition id="4" name="Is touching object" sid="8435683305243676" type="Touch">
+                    <param id="0" name="Object">sound</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5589193747638226" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Value">SOUND*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3269290655665903">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2591120874011584" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="3858327104888788" type="Audio">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="7919715633533836" type="sound">
+                    <param id="0" name="Animation">&quot;anim1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="164912039068326" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8104174361452248">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4272027455563788" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="4157875683880009" type="Audio">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="7666801641312639" type="sound">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="4874555356125304" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <comment>IT SHOULD REMOVE AT FINISHING</comment>
+        <event-block sid="2562966203086438">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8574216121312971" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7038393560082654" type="System">
+                    <param id="0" name="Variable">TURN</param>
+                    <param id="1" name="Value">round(motion_circular.Angle)</param>
+                </action>
+                <action id="0" name="Set text" sid="2229797578127154" type="TEXT_POSISION">
+                    <param id="0" name="Text">figu_cube.X&amp;&quot; &quot;&amp;figu_cube.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="1507362154407982" type="FONT_COIN">
+                    <param id="0" name="Text">COINS_LEVEL&amp;&quot;/&quot;&amp;MAX_COINS_LEVEL </param>
+                </action>
+                <action id="0" name="Set text" sid="701134795362177" type="FONT_SCORE">
+                    <param id="0" name="Text">SCORE</param>
+                </action>
+                <action id="-10" name="Add to" sid="6131508874059972" type="System">
+                    <param id="0" name="Variable">DELAY_NAV</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8738584473251216">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="8268044638068217" type="Touch" />
+                <condition id="4" name="Is touching object" sid="7678456871353168" type="Touch">
+                    <param id="0" name="Object">gr_quit2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1473583377779723" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8478115860499473">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="8590532446300273" type="Touch" />
+                <condition id="4" name="Is touching object" sid="9066677480144702" type="Touch">
+                    <param id="0" name="Object">figu_star</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2652695963284275" type="System">
+                    <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="5689895378210796" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="1740132580200001" type="System">
+                    <param id="0" name="Layout">&quot;LEVEL&quot;&amp;LEVEL</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5745865158503321">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="5217376164925888" type="Touch" />
+                <condition id="4" name="Is touching object" sid="7554530845309376" type="Touch">
+                    <param id="0" name="Object">figu_circle</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4483378619659762" type="System">
+                    <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="2294650714357956" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="1107788576257611" type="System">
+                    <param id="0" name="Layout">&quot;LEVEL&quot;&amp;LEVEL</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7280503153999988">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="582352798773348" type="Touch" />
+                <condition id="4" name="Is touching object" sid="1982876128935028" type="Touch">
+                    <param id="0" name="Object">figu_triangle</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5304942709611063" type="System">
+                    <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="3114105201036167" type="System">
+                    <param id="0" name="Variable">LEVEL</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="6748315604055299" type="System">
+                    <param id="0" name="Layout">&quot;LEVEL&quot;&amp;LEVEL</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CONGRATULATIONS</name>
+    <events>
+        <include>CHECK_FOR_RESULT</include>
+        <event-block sid="6112141271828475">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="4022623201499513" type="Touch" />
+                <condition id="4" name="Is touching object" sid="501420032058372" type="Touch">
+                    <param id="0" name="Object">gr_QUIT</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2987505668461435" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4602817338546878" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8344656675060059">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8984445486989717" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="245689232703321">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="5693478876223519" type="Touch" />
+                <condition id="4" name="Is touching object" sid="5046531041944877" type="Touch">
+                    <param id="0" name="Object">sound</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="672644813905963" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Value">SOUND*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3959882404655958">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5146492329364533" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="1955714483681828" type="Audio">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="7711618864398713" type="sound">
+                    <param id="0" name="Animation">&quot;anim1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="6162244947158337" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="11507208693756">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9066668837451941" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="6443781887921278" type="Audio">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="2883693166020874" type="sound">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="2281150371187329" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

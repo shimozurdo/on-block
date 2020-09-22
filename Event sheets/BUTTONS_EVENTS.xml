@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BUTTONS_EVENTS</name>
+    <events>
+        <variable constant="0" name="prueva" sid="6705936853340573" static="0" type="number">0</variable>
+        <event-block sid="5509591303704588">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5533178348966472" type="PLATFORMS">
+                    <param id="0" name="Object">DESACTIVATE_BUTTONS</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2827079109545178">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="8267490033679974" type="request_button_yellow">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9641560603953462" type="DESACTIVATE_BUTTONS" />
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="5724208643653267" type="SAW_BLADES">
+                            <param id="0" name="Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7171459419190683">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="371812354901853" type="request_button_red">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2761419733667264" type="DESACTIVATE_BUTTONS" />
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="5146776190966257" type="SAW_BLADES">
+                            <param id="0" name="Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="412146729087835">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="7145753517937956" type="request_button_green">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="4870301171168445" type="DESACTIVATE_BUTTONS" />
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="6152517107211104" type="SAW_BLADES">
+                            <param id="0" name="Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4720385897883985">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="1517476518610096" type="request_button_blue">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1235529477746958" type="DESACTIVATE_BUTTONS" />
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="9769416772160404" type="SAW_BLADES">
+                            <param id="0" name="Speed">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8364269406683392">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="1057743514475203" type="PLATFORMS">
+                    <param id="0" name="Object">BUTTONS</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="5582426221537987" type="System">
+                    <param id="0" name="Variable">prueva</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6167229495268633" type="DESACTIVATE_BUTTONS" />
+            </actions>
+            <sub-events>
+                <event-block sid="7726280767652654">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="941412790373897" type="PLATFORMS">
+                            <param id="0" name="Object">button_yellow</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="502865284897298" type="request_button_yellow">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="9742706329094047" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3198664588789602" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_yellow.X+32</param>
+                            <param id="3" name="Y">button_yellow.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6532670360048962" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_yellow.X-32</param>
+                            <param id="3" name="Y">button_yellow.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5538490154213547" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_yellow.X</param>
+                            <param id="3" name="Y">button_yellow.Y+32</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5902233973131094" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_yellow.X</param>
+                            <param id="3" name="Y">button_yellow.Y-32</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3789602234756435">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="879908425781251" type="PLATFORMS">
+                            <param id="0" name="Object">button_red</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="4482759792208639" type="request_button_red">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="2161488060289807" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6009971646638932" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_red.X+32</param>
+                            <param id="3" name="Y">button_red.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7858924449382553" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_red.X-32</param>
+                            <param id="3" name="Y">button_red.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6522289210764986" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_red.X</param>
+                            <param id="3" name="Y">button_red.Y+32</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5767565929217051" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_red.X</param>
+                            <param id="3" name="Y">button_red.Y-32</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7556286487017471">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="853956744866906" type="PLATFORMS">
+                            <param id="0" name="Object">button_green</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="8719133865710551" type="request_button_green">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="5764181344315946" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9725244488281032" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_green.X+32</param>
+                            <param id="3" name="Y">button_green.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1498911566767944" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_green.X-32</param>
+                            <param id="3" name="Y">button_green.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4240320658942349" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_green.X</param>
+                            <param id="3" name="Y">button_green.Y+32</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8279449872081009" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_green.X</param>
+                            <param id="3" name="Y">button_green.Y-32</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5206328756714177">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="5223107614195633" type="PLATFORMS">
+                            <param id="0" name="Object">button_blue</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="4118262623520465" type="request_button_blue">
+                            <param id="0" name="Object">SAW_BLADES</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate2" id="0" name="Set speed" sid="9727506336865262" type="SAW_BLADES">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1025857954651866" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_blue.X+32</param>
+                            <param id="3" name="Y">button_blue.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="21861667794994" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_blue.X-32</param>
+                            <param id="3" name="Y">button_blue.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4016989595860996" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_blue.X</param>
+                            <param id="3" name="Y">button_blue.Y+32</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1470982257599656" type="System">
+                            <param id="0" name="Object to create">DESACTIVATE_BUTTONS</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">button_blue.X</param>
+                            <param id="3" name="Y">button_blue.Y-32</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="516986254700586">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4274311291726184" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9466964801955744" type="TEXT_COINS">
+                    <param id="0" name="Text">prueva</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

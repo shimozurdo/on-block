@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PRELOAD</name>
+    <events>
+        <variable constant="0" name="SOUND" sid="6369024068260524" static="0" type="number">1</variable>
+        <variable constant="0" name="SCORE" sid="3031934363541268" static="0" type="number">0</variable>
+        <variable constant="0" name="SCORE_TEMP" sid="371189768098377" static="0" type="number">0</variable>
+        <variable constant="0" name="COINS_LEVEL" sid="7590185262750518" static="0" type="number">0</variable>
+        <variable constant="0" name="MAX_COINS_LEVEL" sid="4256667267400705" static="0" type="number">0</variable>
+        <variable constant="0" name="MOVIMENTS" sid="1373770169752387" static="0" type="number">0</variable>
+        <variable constant="0" name="LEVEL" sid="4483706494502768" static="0" type="number">1</variable>
+        <variable constant="0" name="VELOCITY" sid="3829683076358088" static="0" type="number">150</variable>
+        <event-block sid="9241226487025074">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9021915573889141" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8320259044716519" type="FIGURES">
+                    <param id="0" name="Pin to">motion_circular</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="9011853116586827" type="System">
+                    <param id="0" name="Layout">intro</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2912084129106279">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="6528248338380826" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4496924229131805" type="System">
+                    <param id="0" name="Layout">intro</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6286020983621162">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7888541032747808" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9826427915026231" type="PERCENT">
+                    <param id="0" name="Text">round(loadingprogress * 100) &amp; &quot;%&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

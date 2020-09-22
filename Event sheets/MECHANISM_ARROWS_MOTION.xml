@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MECHANISM_ARROWS_MOTION</name>
+    <events>
+        <variable constant="0" name="START_PAIRS_MOTION" sid="2671873544775674" static="0" type="number">0</variable>
+        <variable constant="0" name="PAIR_MOTION_INI_X" sid="6577328136514234" static="0" type="number">0</variable>
+        <variable constant="0" name="PAIR_MOTION_INI_Y" sid="3810689068347465" static="0" type="number">0</variable>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="3056256506008452" title="TOUCH_ACTIVATORS_PAIRS">
+            <sub-events>
+                <event-block sid="4073584574532727">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4172080624175523" type="PLATFORMS">
+                            <param id="0" name="Object">PAIRS_OVERLAPPING_HOR</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9156240522708557" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4114309120874756" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4574283532687849" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4344635229098289" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="2262818329776151" type="PAIRS_OVERLAPPING_HOR">
+                            <param id="0" name="Object">ACTIVATOR_PAIRS_CHANGES_HOR</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5260181619655754" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9139098185848201" type="mov_pair_individual_1" />
+                        <action id="-9" name="Destroy" sid="9666524185723598" type="mov_pair_individual_2" />
+                        <action id="-3" name="Create object" sid="2407675778053985" type="System">
+                            <param id="0" name="Object to create">mov_pair_individual_1</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ACTIVATOR_PAIRS_CHANGES_HOR.X</param>
+                            <param id="3" name="Y">ACTIVATOR_PAIRS_CHANGES_HOR.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8142582729989923" type="System">
+                            <param id="0" name="Object to create">mov_pair_individual_2</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ACTIVATOR_PAIRS_CHANGES_HOR.X</param>
+                            <param id="3" name="Y">ACTIVATOR_PAIRS_CHANGES_HOR.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9802004354083611" type="mov_pairs" />
+                        <action id="-3" name="Create object" sid="9200080189637889" type="System">
+                            <param id="0" name="Object to create">mov_pairs</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ACTIVATOR_PAIRS_CHANGES_HOR.X</param>
+                            <param id="3" name="Y">ACTIVATOR_PAIRS_CHANGES_HOR.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="4570686520476918" type="mov_pairs">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="5105071871390707" type="mov_pair_individual_1">
+                            <param id="0" name="Object">mov_pairs</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="2944624154579316" type="mov_pair_individual_2">
+                            <param id="0" name="Object">mov_pairs</param>
+                            <param id="1" name="Image point (optional)">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7306172118922726" type="System">
+                            <param id="0" name="Variable">PAIR_MOTION_INI_X</param>
+                            <param id="1" name="Value">mov_pair_individual_1.X</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="9589606187316738" type="mov_pair_individual_1">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8692333647475996" type="mov_pair_individual_2">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="3675700721924308" type="mov_pair_individual_1">
+                            <param id="0" name="Speed">250</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="2629804796773572" type="mov_pair_individual_2">
+                            <param id="0" name="Speed">250</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="5163854196081171" type="mov_pair_individual_1" />
+                        <action id="-25" name="Move to bottom" sid="9279031297033379" type="mov_pair_individual_2" />
+                        <action id="-25" name="Move to bottom" sid="1173302328342761" type="mov_pairs" />
+                        <action id="0" name="Play" sid="2404010350038112" type="Audio">
+                            <param id="0" name="Audio file">impulse</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7999897748219204">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="3060335339416401" type="PLATFORMS">
+                                    <param id="0" name="Object">mov_pair_individual_1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="9950593286814431" type="PLATFORMS">
+                                    <param id="0" name="Pin to">mov_pair_individual_1</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="709556399158935">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="937205292758089" type="PLATFORMS">
+                                    <param id="0" name="Object">mov_pair_individual_2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="6381054262147719" type="PLATFORMS">
+                                    <param id="0" name="Pin to">mov_pair_individual_2</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="560841305772137">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4067929487302789" type="PLATFORMS">
+                            <param id="0" name="Object">PAIRS_OVERLAPPING_VER</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1408397211763095" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3926225087729019" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1389700306185634" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6467412309692355" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="7440667761358492" type="PAIRS_OVERLAPPING_VER">
+                            <param id="0" name="Object">ACTIVATOR_PAIRS_CHANGES_VER</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3450895787907331" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3439312938211959" type="mov_pair_individual_1" />
+                        <action id="-9" name="Destroy" sid="5397342636344062" type="mov_pair_individual_2" />
+                        <action id="-3" name="Create object" sid="6449798775317004" type="System">
+                            <param id="0" name="Object to create">mov_pair_individual_1</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ACTIVATOR_PAIRS_CHANGES_HOR.X</param>
+                            <param id="3" name="Y">ACTIVATOR_PAIRS_CHANGES_HOR.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4361346171381267" type="System">
+                            <param id="0" name="Object to create">mov_pair_individual_2</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ACTIVATOR_PAIRS_CHANGES_HOR.X</param>
+                            <param id="3" name="Y">ACTIVATOR_PAIRS_CHANGES_HOR.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2877463158759318" type="mov_pairs" />
+                        <action id="-3" name="Create object" sid="1820525199569559" type="System">
+                            <param id="0" name="Object to create">mov_pairs</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">ACTIVATOR_PAIRS_CHANGES_VER.X</param>
+                            <param id="3" name="Y">ACTIVATOR_PAIRS_CHANGES_VER.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="9143190873944473" type="mov_pairs">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="1972808590576121" type="mov_pair_individual_1">
+                            <param id="0" name="Object">mov_pairs</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="694708765409463" type="mov_pair_individual_2">
+                            <param id="0" name="Object">mov_pairs</param>
+                            <param id="1" name="Image point (optional)">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2940405100832426" type="System">
+                            <param id="0" name="Variable">PAIR_MOTION_INI_Y</param>
+                            <param id="1" name="Value">mov_pair_individual_1.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8449515067917855" type="mov_pair_individual_1">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1739744650974554" type="mov_pair_individual_2">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="411758467306261" type="mov_pair_individual_1">
+                            <param id="0" name="Speed">250</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="263284259491176" type="mov_pair_individual_2">
+                            <param id="0" name="Speed">250</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="2926943102114708" type="mov_pair_individual_1" />
+                        <action id="-25" name="Move to bottom" sid="3523549909094518" type="mov_pair_individual_2" />
+                        <action id="-25" name="Move to bottom" sid="7488693896129014" type="mov_pair_individual_1" />
+                        <action id="-25" name="Move to bottom" sid="3838567493495234" type="mov_pair_individual_2" />
+                        <action id="-25" name="Move to bottom" sid="2377678608858699" type="mov_pairs" />
+                        <action id="0" name="Play" sid="1098400068759299" type="Audio">
+                            <param id="0" name="Audio file">impulse</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8787721321132969">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="5492794051982428" type="PLATFORMS">
+                                    <param id="0" name="Object">mov_pair_individual_1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="4342424808253137" type="PLATFORMS">
+                                    <param id="0" name="Pin to">mov_pair_individual_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5079863066087835">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="3491459503741695" type="PLATFORMS">
+                                    <param id="0" name="Object">mov_pair_individual_2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="4200321103048704" type="PLATFORMS">
+                                    <param id="0" name="Pin to">mov_pair_individual_2</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1511726482152359">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4007322441916219" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="2887113039020707" type="System">
+                            <param id="0" name="First value">mov_pair_individual_1.X</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">PAIR_MOTION_INI_X+64</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="9200525740714493" type="System">
+                            <param id="0" name="First value">mov_pair_individual_1.X</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">PAIR_MOTION_INI_X+80</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7798581819024143" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6508773794725897" type="mov_pairs" />
+                        <action id="-9" name="Destroy" sid="3983797575422203" type="mov_pair_individual_1" />
+                        <action id="-9" name="Destroy" sid="5331581300141162" type="mov_pair_individual_2" />
+                        <action id="-9" name="Set value" sid="3930299061335604" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2867965578251343" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1129140882301857" type="System">
+                            <param id="0" name="Variable">PAIR_MOTION_INI_X</param>
+                            <param id="1" name="Value">mov_pair_individual_1.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1328121050665501" type="System">
+                            <param id="0" name="Variable">PAIR_MOTION_INI_Y</param>
+                            <param id="1" name="Value">mov_pair_individual_1.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8382766500995637">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7899743862147293" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="6473871980349283" type="System">
+                            <param id="0" name="First value">mov_pair_individual_1.Y</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">PAIR_MOTION_INI_Y+64</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="411374608073661" type="System">
+                            <param id="0" name="First value">mov_pair_individual_1.Y</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">PAIR_MOTION_INI_Y+80</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3465367925858672" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="8486965186029256" type="mov_pairs" />
+                        <action id="-9" name="Destroy" sid="302974772617344" type="mov_pair_individual_1" />
+                        <action id="-9" name="Destroy" sid="2516886557855876" type="mov_pair_individual_2" />
+                        <action id="-9" name="Set value" sid="3313833665260635" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5314163931780668" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9589196389316533" type="System">
+                            <param id="0" name="Variable">PAIR_MOTION_INI_X</param>
+                            <param id="1" name="Value">mov_pair_individual_1.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2154352741404678" type="System">
+                            <param id="0" name="Variable">PAIR_MOTION_INI_Y</param>
+                            <param id="1" name="Value">mov_pair_individual_1.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+    </events>
+</c2eventsheet>

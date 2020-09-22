@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>INTRO</name>
+    <events>
+        <variable constant="0" name="i_MEMORY_GAME" sid="8373921479154451" static="0" type="number">1</variable>
+        <event-block sid="6362828374334614">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3905944496611671" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set size" sid="9919736534456398" type="SAVE_GAME">
+                    <param id="0" name="Width">25</param>
+                    <param id="1" name="Height">1</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="3242651817594755" type="SAVE_GAME">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="6905045166884849" type="System">
+                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5092878301095737">
+                    <conditions>
+                        <condition id="-10" name="For" sid="302722399484706" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">24</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1935146378378753">
+                            <conditions />
+                            <actions>
+                                <action id="2" name="Set at X" sid="568088073932491" type="SAVE_GAME">
+                                    <param id="0" name="X">i_MEMORY_GAME </param>
+                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;LEVEL&quot;&amp;i_MEMORY_GAME ) )</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1059404880595838" type="TEXT_ARRAY">
+                                    <param id="0" name="Text">self.Text &amp;&quot;level &quot;&amp;  i_MEMORY_GAME &amp;&quot;: &quot;&amp; SAVE_GAME.At(i_MEMORY_GAME) &amp;&quot; SCOBLE &quot;&amp;int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;i_MEMORY_GAME) )&amp; NewLine</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="5321955979896272" type="System">
+                                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4651342520703002">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6022942368804932" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1815768245246413" type="System">
+                    <param id="0" name="Variable">SCORE</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot; ) )</param>
+                </action>
+                <action id="0" name="Set text" sid="4189445354479432" type="TEXT_ARRAY">
+                    <param id="0" name="Text">self.Text &amp;&quot;ES&quot;&amp;SCORE&amp; NewLine</param>
+                </action>
+                <action id="-16" name="Wait" sid="6383970400237709" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="0" name="Play" sid="4009524054120083" type="Audio">
+                    <param id="0" name="Audio file">puzzle-1-a</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;MAIN&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="2470243118859137" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="875134749768555" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>KEYBOARD</name>
+    <events>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+        <event-group description="" sid="27714649997708" title="PRESS_ACTIVATORS_LINEARS">
+            <sub-events>
+                <event-block sid="9398997636084082">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="9028659346498042" type="Touch">
+                            <param id="0" name="Object">activator_lineal_right</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="606486151640886" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6585497954509989" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2998948994326267" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="682875546496104" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="2936771648822295" type="Audio">
+                            <param id="0" name="Audio file">move</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="572487071212851" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="1879754672446477" type="motion_lineal" />
+                        <action id="-3" name="Create object" sid="9096623270908994" type="System">
+                            <param id="0" name="Object to create">motion_lineal</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">scroll_to.X</param>
+                            <param id="3" name="Y">scroll_to.Y+32</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="1899832748028876" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_X</param>
+                            <param id="1" name="Value">motion_lineal.X</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6394489984058681" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_Y</param>
+                            <param id="1" name="Value">motion_lineal.Y</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="6371488334481452" type="motion_lineal">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="494384538428185" type="motion_lineal">
+                            <param id="0" name="Speed">VELOCITY</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="9955438696587376" type="motion_lineal" />
+                        <action id="-15" name="Set visible" sid="344081058876003" type="motion_lineal">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="5797479138775987" type="PLATFORMS">
+                            <param id="0" name="Pin to">motion_lineal</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9730476368724907">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="2631631857056233" type="System">
+                                    <param id="0" name="Object">PLATFORMS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7016666550153942" type="System">
+                                    <param id="0" name="Object to create">dust</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">PLATFORMS.X-16</param>
+                                    <param id="3" name="Y">PLATFORMS.Y+16</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8211296269015917">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1086511225347063" type="Touch">
+                            <param id="0" name="Object">activator_lineal_left</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7955553054432217" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3752692482237931" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2492713921890569" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8230431960475252" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="3647655905796678" type="Audio">
+                            <param id="0" name="Audio file">move</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9269059710176119" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9705077806755196" type="motion_lineal" />
+                        <action id="-3" name="Create object" sid="1108991638252421" type="System">
+                            <param id="0" name="Object to create">motion_lineal</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">scroll_to.X</param>
+                            <param id="3" name="Y">scroll_to.Y+32</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5766441774170371" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_X</param>
+                            <param id="1" name="Value">motion_lineal.X</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4407664352805028" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_Y</param>
+                            <param id="1" name="Value">motion_lineal.Y</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="6651355618923689" type="motion_lineal">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8346808610884032" type="motion_lineal">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="2201907849393257" type="motion_lineal">
+                            <param id="0" name="Speed">VELOCITY</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="2587499366108406" type="motion_lineal" />
+                        <action id="-15" name="Set visible" sid="6712095076155824" type="motion_lineal">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4828654778678344" type="PLATFORMS">
+                            <param id="0" name="Pin to">motion_lineal</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5094514040601474">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="7661095196121874" type="System">
+                                    <param id="0" name="Object">PLATFORMS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2219340661677653" type="System">
+                                    <param id="0" name="Object to create">dust</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">PLATFORMS.X+16</param>
+                                    <param id="3" name="Y">PLATFORMS.Y+16</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4015201047585929">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="9416971829300119" type="Touch">
+                            <param id="0" name="Object">activator_lineal_up</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4299491945194981" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4735005740301342" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2585870015250326" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3684489862966847" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="2333547759741703" type="Audio">
+                            <param id="0" name="Audio file">move</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2006757945358264" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7725344395813544" type="motion_lineal" />
+                        <action id="-3" name="Create object" sid="9044145860360619" type="System">
+                            <param id="0" name="Object to create">motion_lineal</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">scroll_to.X+32</param>
+                            <param id="3" name="Y">scroll_to.Y</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="419833640494822" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_X</param>
+                            <param id="1" name="Value">motion_lineal.X</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="889207107533736" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_Y</param>
+                            <param id="1" name="Value">motion_lineal.Y</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="8806141027819482" type="motion_lineal">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="9607721676748127" type="motion_lineal">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="2787747417924211" type="motion_lineal">
+                            <param id="0" name="Speed">VELOCITY</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="296516920855548" type="motion_lineal" />
+                        <action id="-15" name="Set visible" sid="8213159323194029" type="motion_lineal">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1779344358562016" type="PLATFORMS">
+                            <param id="0" name="Pin to">motion_lineal</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="347522497659093">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="8276563166460554" type="System">
+                                    <param id="0" name="Object">PLATFORMS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8531222983479598" type="System">
+                                    <param id="0" name="Object to create">dust</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">PLATFORMS.X</param>
+                                    <param id="3" name="Y">PLATFORMS.Y+16</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8983203067918927">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="7772099517701484" type="Touch">
+                            <param id="0" name="Object">activator_lineal_down</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4015181439371429" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="5335401417951287" type="System">
+                            <param id="0" name="Variable">START_CIRCULAR_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7892785800481846" type="System">
+                            <param id="0" name="Variable">STOPING_ALL</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="289235903288391" type="System">
+                            <param id="0" name="Variable">START_PAIRS_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="9136036879864995" type="Audio">
+                            <param id="0" name="Audio file">move</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5191909193968246" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6251135888951159" type="motion_lineal" />
+                        <action id="-3" name="Create object" sid="4243625141820167" type="System">
+                            <param id="0" name="Object to create">motion_lineal</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">scroll_to.X+32</param>
+                            <param id="3" name="Y">scroll_to.Y</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="193547699510386" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_X</param>
+                            <param id="1" name="Value">motion_lineal.X</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="9153546531838775" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_Y</param>
+                            <param id="1" name="Value">motion_lineal.Y</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="2772059497730191" type="motion_lineal">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1006752688522169" type="motion_lineal">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="7908852028146636" type="motion_lineal">
+                            <param id="0" name="Speed">VELOCITY</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="3636337865788994" type="motion_lineal" />
+                        <action id="-15" name="Set visible" sid="3728212767943889" type="motion_lineal">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="8110385832648019" type="PLATFORMS">
+                            <param id="0" name="Pin to">motion_lineal</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8217140449876665">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="171130991917066" type="System">
+                                    <param id="0" name="Object">PLATFORMS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1278046951791388" type="System">
+                                    <param id="0" name="Object to create">dust</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">PLATFORMS.X</param>
+                                    <param id="3" name="Y">PLATFORMS.Y-26</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5927581127138919">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6266202364663103" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="7237221558558895" type="System">
+                            <param id="0" name="First value">abs(LINEAL_MOTION_INI_X-motion_lineal.X)</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">64</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5711066757735307" type="motion_lineal" />
+                        <action id="-9" name="Set value" sid="9151771714348822" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6785891202849973" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_Y</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6117488694963516" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_X</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4187864787382963" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8241802978028491" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1539838277853113" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3450733474107068">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9947408431830218" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="2967661537820302" type="System">
+                            <param id="0" name="First value">abs(LINEAL_MOTION_INI_Y-motion_lineal.Y)</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">64</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="804113851436314" type="motion_lineal" />
+                        <action id="-9" name="Set value" sid="8144657676846331" type="System">
+                            <param id="0" name="Variable">START_LINEAL_MOTION</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="975060561099819" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_Y</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2214631680710916" type="System">
+                            <param id="0" name="Variable">LINEAL_MOTION_INI_X</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9979548832567765" type="System">
+                            <param id="0" name="Variable">CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1969946696603988" type="System">
+                            <param id="0" name="Variable">START_CALCULATE_POSITIONS</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3244692123737015" type="System">
+                            <param id="0" name="Variable">TURN</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>---------------------------------------------------------------------------------------------------------------------------------</comment>
+    </events>
+</c2eventsheet>

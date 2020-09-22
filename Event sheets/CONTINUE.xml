@@ -1,0 +1,2343 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CONTINUE</name>
+    <events>
+        <variable constant="0" name="i_CONTINUE" sid="2080827607720644" static="0" type="number">0</variable>
+        <event-block sid="5341046406676459">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1274821990428294" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="2797236902520579" type="GR_floor_continue">
+                    <param id="0" name="Width">WindowWidth+968</param>
+                </action>
+                <action id="-3" name="Set position" sid="2157089163219209" type="GR_floor_continue">
+                    <param id="0" name="X">-256</param>
+                    <param id="1" name="Y">-314</param>
+                </action>
+                <action id="-9" name="Set value" sid="2738544523333826" type="System">
+                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="991799984618896" type="System">
+                    <param id="0" name="Variable">SCORE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1394600620305092">
+                    <conditions>
+                        <condition id="-10" name="For" sid="5584082317950717" type="System">
+                            <param id="0" name="Name">&quot;NEW SCORE&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">24</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="694249575404764" type="System">
+                            <param id="0" name="Variable">SCORE</param>
+                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;SCORE&quot;&amp;i_MEMORY_GAME ) )</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4095023780688084" type="System">
+                            <param id="0" name="Variable">i_MEMORY_GAME</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3978945642699987">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2953619536330705" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="2295619753304322" type="GR_floor_continue">
+                    <param id="0" name="X">GR_floor_continue.X-30*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="957657553898468">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="6175859765807932" type="GR_floor_continue">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-512</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2487805442152812" type="GR_floor_continue">
+                    <param id="0" name="X">-256</param>
+                    <param id="1" name="Y">-314</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9509839084247908">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3798998831167594" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9880500285709619" type="FONT_SCORE">
+                    <param id="0" name="Text">SCORE</param>
+                </action>
+                <action id="1" name="Set size" sid="4485971205727291" type="SAVE_GAME">
+                    <param id="0" name="Width">25</param>
+                    <param id="1" name="Height">1</param>
+                    <param id="2" name="Depth">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="3338489336657949" type="SAVE_GAME">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="2927189089444663" type="System">
+                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4143950638644447">
+                    <conditions>
+                        <condition id="-10" name="For" sid="8365953031776678" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">24</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5504575456537601">
+                            <conditions />
+                            <actions>
+                                <action id="2" name="Set at X" sid="7231063343980945" type="SAVE_GAME">
+                                    <param id="0" name="X">i_MEMORY_GAME </param>
+                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;LEVEL&quot;&amp;i_MEMORY_GAME ) )</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="6304270093988304" type="System">
+                                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="602962778607168">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2365398959558141" type="System">
+                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">24</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5028381140588339" type="System">
+                    <param id="0" name="Variable">i_MEMORY_GAME</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3627826987631975">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1544861849010231" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(1)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4880437598760046" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">one.x-20</param>
+                            <param id="3" name="Y">one.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4428122216549906">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7033534690951291" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(1)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5061897573670808" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">one.x-20</param>
+                            <param id="3" name="Y">one.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6623407200823439" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">one.x</param>
+                            <param id="3" name="Y">one.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7538635156017627">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6469408542933456" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(1)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1710273817383742" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">one.x-20</param>
+                            <param id="3" name="Y">one.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4115287589238574" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">one.x</param>
+                            <param id="3" name="Y">one.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4251511861696173" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">one.x+20</param>
+                            <param id="3" name="Y">one.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8516352868339983">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7008709130693456" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(2)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3195857286891014" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x</param>
+                            <param id="3" name="Y">two.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7831574733963607">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6746991665928278" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(2)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1231151671373376" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x-20</param>
+                            <param id="3" name="Y">two.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6375045644248229">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1224988795445883" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(2)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8635370704036807" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x-20</param>
+                            <param id="3" name="Y">two.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3602918311367586" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x</param>
+                            <param id="3" name="Y">two.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7254531450142179">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="532669185765529" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(2)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4773258624641482" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x-20</param>
+                            <param id="3" name="Y">two.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3528431570221608" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x</param>
+                            <param id="3" name="Y">two.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8666544152232695" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">two.x+20</param>
+                            <param id="3" name="Y">two.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6191905100645961">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7043367442426135" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(3)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4372566084528239" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x</param>
+                            <param id="3" name="Y">three.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6919758234940905">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7236272461759323" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(3)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6411517014368824" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x-20</param>
+                            <param id="3" name="Y">three.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7892189220576741">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6415046930727206" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(3)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9827944084240083" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x-20</param>
+                            <param id="3" name="Y">three.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6390115601427752" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x</param>
+                            <param id="3" name="Y">three.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2976598887654074">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9949357945003423" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(3)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7299589576069974" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x-20</param>
+                            <param id="3" name="Y">three.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6357789270709122" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x</param>
+                            <param id="3" name="Y">three.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4207108436918439" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">three.x+20</param>
+                            <param id="3" name="Y">three.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3536313711289419">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4758610910783305" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(4)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6583752322239326" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x</param>
+                            <param id="3" name="Y">four.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3277145931200056">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="256954299027603" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(4)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9547904930249769" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x-20</param>
+                            <param id="3" name="Y">four.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8839504167064459">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5867976118894573" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(4)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5208354889059707" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x-20</param>
+                            <param id="3" name="Y">four.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7921298854897081" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x</param>
+                            <param id="3" name="Y">four.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2689358262814299">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1966431349624891" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(4)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5433721877011709" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x-20</param>
+                            <param id="3" name="Y">four.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9230708082902219" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x</param>
+                            <param id="3" name="Y">four.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9784933224260802" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">four.x+20</param>
+                            <param id="3" name="Y">four.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1369030164782585">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3614721375263161" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(5)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5548833096906767" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x</param>
+                            <param id="3" name="Y">five.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8097811455211424">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7496267600614657" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(5)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="547554716036774" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x-20</param>
+                            <param id="3" name="Y">five.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="466667528200073">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2593457812697039" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(5)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7627308163689429" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x-20</param>
+                            <param id="3" name="Y">five.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4761394705761807" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x</param>
+                            <param id="3" name="Y">five.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7003076655034778">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7935874587636691" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(5)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6591985190154174" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x-20</param>
+                            <param id="3" name="Y">five.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8262434578662755" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x</param>
+                            <param id="3" name="Y">five.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1227099176030922" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">five.x+20</param>
+                            <param id="3" name="Y">five.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9766475793791125">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2955462835203543" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(6)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7646736716343742" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x</param>
+                            <param id="3" name="Y">six.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3858148384758764">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9370083270736156" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(6)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2547825393103633" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x-20</param>
+                            <param id="3" name="Y">six.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="126042380354275">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6574663812353927" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(6)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6708566014113839" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x-20</param>
+                            <param id="3" name="Y">six.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4644988745955374" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x</param>
+                            <param id="3" name="Y">six.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1933123256387723">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7843320318628714" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(6)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3216515101720358" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x-20</param>
+                            <param id="3" name="Y">six.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9771353426587098" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x</param>
+                            <param id="3" name="Y">six.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7742175973586736" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">six.x+20</param>
+                            <param id="3" name="Y">six.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3658018441416724">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4151288416608488" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(7)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4303786036085496" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x</param>
+                            <param id="3" name="Y">seven.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8932518210180054">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2865574362703195" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(7)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="784110795880677" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x-20</param>
+                            <param id="3" name="Y">seven.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="337539449834741">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6016885434394566" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(7)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6154394145704821" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x-20</param>
+                            <param id="3" name="Y">seven.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5096760248614983" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x</param>
+                            <param id="3" name="Y">seven.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4953006428409338">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9934941773727024" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(7)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9589577848324009" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x-20</param>
+                            <param id="3" name="Y">seven.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2652712541282995" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x</param>
+                            <param id="3" name="Y">seven.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4145720500240743" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seven.x+20</param>
+                            <param id="3" name="Y">seven.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1608939330957852">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8929214403142464" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(8)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3965685804662523" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x</param>
+                            <param id="3" name="Y">eight.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8287776413458526">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4050287733250179" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(8)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2636853931335475" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x-20</param>
+                            <param id="3" name="Y">eight.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2977676058383488">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1869629272183239" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(8)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6852230582658085" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x-20</param>
+                            <param id="3" name="Y">eight.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5310911640969764" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x</param>
+                            <param id="3" name="Y">eight.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1110897717701045">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9595485255764952" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(8)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8539378958812975" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x-20</param>
+                            <param id="3" name="Y">eight.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="571504207733307" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x</param>
+                            <param id="3" name="Y">eight.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2369316027223155" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eight.x+20</param>
+                            <param id="3" name="Y">eight.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7063661511559478">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7481456052932364" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(9)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9051759977661772" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x</param>
+                            <param id="3" name="Y">nine.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9415554661686691">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1927299334697877" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(9)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3425753063705634" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x-20</param>
+                            <param id="3" name="Y">nine.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3862884912957567">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8693982790678182" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(9)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8970563213284325" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x-20</param>
+                            <param id="3" name="Y">nine.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6082775713516752" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x</param>
+                            <param id="3" name="Y">nine.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4128945375823744">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6802827098062082" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(9)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9661294052987864" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x-20</param>
+                            <param id="3" name="Y">nine.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2194196232502312" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x</param>
+                            <param id="3" name="Y">nine.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1899225790544293" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nine.x+20</param>
+                            <param id="3" name="Y">nine.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4922223643552741">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4886338580707842" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(10)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3823113656082664" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x</param>
+                            <param id="3" name="Y">ten.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5695214808210035">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9946672484904668" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(10)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1601079924310865" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x-20</param>
+                            <param id="3" name="Y">ten.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5965807205056322">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5994420146399614" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(10)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7284181741534059" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x-20</param>
+                            <param id="3" name="Y">ten.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4753038878594481" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x</param>
+                            <param id="3" name="Y">ten.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="502008113421218">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1548030570191131" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(10)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3912859842769192" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x-20</param>
+                            <param id="3" name="Y">ten.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2979805431003331" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x</param>
+                            <param id="3" name="Y">ten.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3880280180543675" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">ten.x+20</param>
+                            <param id="3" name="Y">ten.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6616981560452941">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8279063513231907" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(11)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7007206973856907" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x</param>
+                            <param id="3" name="Y">eleven.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5264521598970854">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2896676245518576" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(11)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7832209522627609" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x-20</param>
+                            <param id="3" name="Y">eleven.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7289138329772712">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7613674995865913" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(11)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3987023522440412" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x-20</param>
+                            <param id="3" name="Y">eleven.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="93405699122937" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x</param>
+                            <param id="3" name="Y">eleven.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7674783598241894">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9172060400261024" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(11)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1201210626011431" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x-20</param>
+                            <param id="3" name="Y">eleven.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1074499036356646" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x</param>
+                            <param id="3" name="Y">eleven.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4958702235786574" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eleven.x+20</param>
+                            <param id="3" name="Y">eleven.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2168221607407572">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7525189651591816" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(12)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7808936800304617" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x</param>
+                            <param id="3" name="Y">twelve.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="896437393911768">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7552146551944963" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(12)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="234552063756065" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x-20</param>
+                            <param id="3" name="Y">twelve.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8985583772919213">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3662615114071751" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(12)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6354326037776465" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x-20</param>
+                            <param id="3" name="Y">twelve.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3981059295209406" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x</param>
+                            <param id="3" name="Y">twelve.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8899979495357519">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="82763133083223" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(12)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2039684307198878" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x-20</param>
+                            <param id="3" name="Y">twelve.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6370814079575829" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x</param>
+                            <param id="3" name="Y">twelve.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7700016792140653" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twelve.x+20</param>
+                            <param id="3" name="Y">twelve.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6651847438376611">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8247743301389342" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(13)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6542200971179261" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x</param>
+                            <param id="3" name="Y">thirteen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1991101564109174">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3933866755894302" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(13)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8854375452103085" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x-20</param>
+                            <param id="3" name="Y">thirteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6083222321621025">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7999140766664684" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(13)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7751807738667767" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x-20</param>
+                            <param id="3" name="Y">thirteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3930287228008287" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x</param>
+                            <param id="3" name="Y">thirteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="289516792921929">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9982536310112139" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(13)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2056676216889256" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x-20</param>
+                            <param id="3" name="Y">thirteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="795355646444864" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x</param>
+                            <param id="3" name="Y">thirteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="657174013948561" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">thirteen.x+20</param>
+                            <param id="3" name="Y">thirteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1023880584216422">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1294392778002829" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(14)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1734990424709071" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x</param>
+                            <param id="3" name="Y">forteen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3663930118948575">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3945203673472002" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(14)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6211238663403024" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x-20</param>
+                            <param id="3" name="Y">forteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1072079087964914">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="573820918768853" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(14)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7846332552399366" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x-20</param>
+                            <param id="3" name="Y">forteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4581690602264043" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x</param>
+                            <param id="3" name="Y">forteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4045635058860501">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2535671666033738" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(14)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7217217886484987" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x-20</param>
+                            <param id="3" name="Y">forteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2000779846700353" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x</param>
+                            <param id="3" name="Y">forteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="319604749255891" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">forteen.x+20</param>
+                            <param id="3" name="Y">forteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9861860658292956">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2199582888407431" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(15)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5037182612725523" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x</param>
+                            <param id="3" name="Y">fifhteen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6418614698619986">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1061146619298524" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(15)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7854698956813525" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x-20</param>
+                            <param id="3" name="Y">fifhteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2706385550420817">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2375309479144933" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(15)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3433643335492656" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x-20</param>
+                            <param id="3" name="Y">fifhteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5063084529910614" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x</param>
+                            <param id="3" name="Y">fifhteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9471570449582924">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3306617603620572" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(15)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="540457085149345" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x-20</param>
+                            <param id="3" name="Y">fifhteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="274712007123324" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x</param>
+                            <param id="3" name="Y">fifhteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1147483261777027" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">fifhteen.x+20</param>
+                            <param id="3" name="Y">fifhteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3387342736993316">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2596601135017858" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(16)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5743241110101055" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x</param>
+                            <param id="3" name="Y">sixteen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6743729471748395">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6739742283356638" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(16)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2972273848973554" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x-20</param>
+                            <param id="3" name="Y">sixteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9391485599986892">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4981364739270581" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(16)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7069878944460901" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x-20</param>
+                            <param id="3" name="Y">sixteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7433991762440362" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x</param>
+                            <param id="3" name="Y">sixteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1049500652736111">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8503049720108173" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(16)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5308907784011218" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x-20</param>
+                            <param id="3" name="Y">sixteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4351407324429769" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x</param>
+                            <param id="3" name="Y">sixteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7789124405150325" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">sixteen.x+20</param>
+                            <param id="3" name="Y">sixteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8075526271744319">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2979197266616582" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(17)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5933641336337029" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x</param>
+                            <param id="3" name="Y">seventeen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9642856767401305">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6779965783976845" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(17)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3211485608429435" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x-20</param>
+                            <param id="3" name="Y">seventeen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3620478778663354">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3407596373976253" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(17)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5110000997581904" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x-20</param>
+                            <param id="3" name="Y">seventeen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9099515262646621" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x</param>
+                            <param id="3" name="Y">seventeen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="663062988511857">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4984789541088496" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(17)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2083954813132653" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x-20</param>
+                            <param id="3" name="Y">seventeen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4993929202455512" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x</param>
+                            <param id="3" name="Y">seventeen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9419243464504472" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">seventeen.x+20</param>
+                            <param id="3" name="Y">seventeen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3215174238151688">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4933235892895053" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(18)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7827728787569575" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x</param>
+                            <param id="3" name="Y">eighteen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8490654959865544">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1567811756691277" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(18)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="357684847836081" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x-20</param>
+                            <param id="3" name="Y">eighteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8733168437238126">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3966137721658165" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(18)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9022952533705471" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x-20</param>
+                            <param id="3" name="Y">eighteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8002381385296889" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x</param>
+                            <param id="3" name="Y">eighteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="636316477823533">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="2668136492469514" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(18)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="632917005954202" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x-20</param>
+                            <param id="3" name="Y">eighteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8540586907661911" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x</param>
+                            <param id="3" name="Y">eighteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7368276228086514" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">eighteen.x+20</param>
+                            <param id="3" name="Y">eighteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8244461652123381">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8436529873010508" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(19)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3173995588549368" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x</param>
+                            <param id="3" name="Y">nineteen.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4419142129032286">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7986788804240413" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(19)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1733867943423549" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x-20</param>
+                            <param id="3" name="Y">nineteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6416120028268978">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6815046483464937" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(19)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2482856723145774" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x-20</param>
+                            <param id="3" name="Y">nineteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9116581385297018" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x</param>
+                            <param id="3" name="Y">nineteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4834695725494689">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="272702955859227" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(19)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2658880875022675" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x-20</param>
+                            <param id="3" name="Y">nineteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2166477128402542" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x</param>
+                            <param id="3" name="Y">nineteen.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6974335369052966" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">nineteen.x+20</param>
+                            <param id="3" name="Y">nineteen.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4779040213641288">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="689690143196069" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(20)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8948367656491549" type="System">
+                            <param id="0" name="Object to create">locked</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x</param>
+                            <param id="3" name="Y">twenty.y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4875703985892043">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4873648788340735" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(20)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7435478121791162" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x-20</param>
+                            <param id="3" name="Y">twenty.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4404979422529915">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3349586002676005" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(20)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7197205354010829" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x-20</param>
+                            <param id="3" name="Y">twenty.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6690152788243122" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x</param>
+                            <param id="3" name="Y">twenty.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2861530055742141">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1181515363141627" type="System">
+                            <param id="0" name="First value">SAVE_GAME.At(20)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3923014674725345" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x-20</param>
+                            <param id="3" name="Y">twenty.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7689075117337442" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x</param>
+                            <param id="3" name="Y">twenty.y+20</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1434462691898607" type="System">
+                            <param id="0" name="Object to create">mini_bonus</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">twenty.x+20</param>
+                            <param id="3" name="Y">twenty.y+20</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7497610565521711">
+            <conditions>
+                <condition id="3" name="On touched object" sid="305999407137544" type="Touch">
+                    <param id="0" name="Object">one</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="4486501295019106" type="one">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3762219251877891" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="6835826886839199" type="System">
+                    <param id="0" name="Layout">level1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="390429540432024">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9897960521984186" type="Touch">
+                    <param id="0" name="Object">two</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="508756788681573" type="two">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2200705713924632" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4618370264877961" type="System">
+                    <param id="0" name="Layout">level2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7980981837663945">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5650974940161027" type="Touch">
+                    <param id="0" name="Object">three</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="2991918913973695" type="three">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2876200376728596" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1393352050251956" type="System">
+                    <param id="0" name="Layout">level3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7420077355631222">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5298456396138653" type="Touch">
+                    <param id="0" name="Object">four</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="2232336654318718" type="four">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="187299953875539" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8364419677336119" type="System">
+                    <param id="0" name="Layout">level4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5119138784755969">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1420697212565198" type="Touch">
+                    <param id="0" name="Object">five</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="116062991854301" type="five">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="1690201383418119" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1501419720082044" type="System">
+                    <param id="0" name="Layout">level5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3464955566795865">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="8831998261841906" type="Touch" />
+                <condition id="4" name="Is touching object" sid="1810926055999119" type="Touch">
+                    <param id="0" name="Object">six</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="3980246834851309" type="six">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="716402054100978" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8207992312162799" type="System">
+                    <param id="0" name="Layout">level6</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3615180454177002">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6668276435125402" type="Touch">
+                    <param id="0" name="Object">seven</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="8884030432353616" type="seven">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8221497370334533" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="2039346820574345" type="System">
+                    <param id="0" name="Layout">level7</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4580079115930235">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2744870891875164" type="Touch">
+                    <param id="0" name="Object">eight</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="648003316488911" type="eight">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2242962928270822" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5702928629788791" type="System">
+                    <param id="0" name="Layout">level8</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9011531267007291">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8865119930892845" type="Touch">
+                    <param id="0" name="Object">nine</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="4822621018243888" type="nine">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="7880527441574703" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="6322590752083949" type="System">
+                    <param id="0" name="Layout">level9</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3092684094842825">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3394531073288413" type="Touch">
+                    <param id="0" name="Object">ten</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="8728362415883488" type="ten">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8167623481490038" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8627094928932928" type="System">
+                    <param id="0" name="Layout">level10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5268023487391041">
+            <conditions>
+                <condition id="3" name="On touched object" sid="525511715812733" type="Touch">
+                    <param id="0" name="Object">eleven</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="9692047454340944" type="eleven">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="346114466913632" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4724821146818941" type="System">
+                    <param id="0" name="Layout">level11</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8414828736851124">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1080137454452235" type="Touch">
+                    <param id="0" name="Object">twelve</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="5708850016593595" type="twelve">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="7497761998007236" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="3746141458021675" type="System">
+                    <param id="0" name="Layout">level12</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3531853684415493">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3687423919631674" type="Touch">
+                    <param id="0" name="Object">thirteen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="5443380622857663" type="thirteen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2079280206429333" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="3919273814925411" type="System">
+                    <param id="0" name="Layout">level13</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6723630342458346">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8677202787135661" type="Touch">
+                    <param id="0" name="Object">forteen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="3550315734930927" type="forteen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8903670940073564" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="909801401733351" type="System">
+                    <param id="0" name="Layout">level14</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9436216201207386">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3690603327413867" type="Touch">
+                    <param id="0" name="Object">fifhteen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="2957123805275811" type="fifhteen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="7959472536804277" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="141706056105478" type="System">
+                    <param id="0" name="Layout">level15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8019370820355843">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5000508112879997" type="Touch">
+                    <param id="0" name="Object">sixteen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="6308870400104597" type="sixteen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8385082294251007" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="2192448270623237" type="System">
+                    <param id="0" name="Layout">level16</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6028416815034266">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2000793950948909" type="Touch">
+                    <param id="0" name="Object">seventeen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="4044000287238573" type="seventeen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="6437191050428634" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4625916613664546" type="System">
+                    <param id="0" name="Layout">level17</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3576519476701383">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7483992723819756" type="Touch">
+                    <param id="0" name="Object">eighteen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="5997894300237103" type="eighteen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="4212669481533301" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="2090430243609867" type="System">
+                    <param id="0" name="Layout">level18</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2684774377534327">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9548150113419202" type="Touch">
+                    <param id="0" name="Object">nineteen</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="1237566207878804" type="nineteen">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8128441805100807" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="9350782241600192" type="System">
+                    <param id="0" name="Layout">level19</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7356527457610656">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5293490960428541" type="Touch">
+                    <param id="0" name="Object">twenty</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="6314201381160606" type="twenty">
+                    <param id="0" name="Object">locked</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="6208354987026286" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5316831062466843" type="System">
+                    <param id="0" name="Layout">level20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8962656206774582">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="1789359638321559" type="Touch" />
+                <condition id="4" name="Is touching object" sid="6840298776703825" type="Touch">
+                    <param id="0" name="Object">gr_QUIT</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1777771276354419" type="System">
+                    <param id="0" name="Layout">menu</param>
+                </action>
+                <action id="0" name="Play" sid="9900494966733591" type="Audio">
+                    <param id="0" name="Audio file">onblock</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9934337080879565">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="9793814980783336" type="Touch" />
+                <condition id="4" name="Is touching object" sid="8186885103233121" type="Touch">
+                    <param id="0" name="Object">sound</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6524684866004919" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Value">SOUND*(-1)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9556681386900829">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8145593174082229" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="8542768044928576" type="Audio">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="5947950189007009" type="sound">
+                    <param id="0" name="Animation">&quot;anim1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="4672611424421377" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3101764257239756">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1842650982667217" type="System">
+                    <param id="0" name="Variable">SOUND</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set silent" sid="9369137783010714" type="Audio">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="5710018858204004" type="sound">
+                    <param id="0" name="Animation">&quot;anim2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="22" name="Set paused" sid="2854862998518428" type="Audio">
+                    <param id="0" name="Tag">&quot;MAIN&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
